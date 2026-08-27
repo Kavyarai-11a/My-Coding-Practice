@@ -38,5 +38,12 @@ int main()
             scanf("%f", arrF + i);
         }
 
+        printf("Enter type:\n");
+    printf("0 - Integer\n");
+    printf("1 - Float\n");
+    printf("Enter your choice: ");
+    scanf("%d", &type);
+
+    
     return 0;
 }
