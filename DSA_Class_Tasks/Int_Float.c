@@ -18,3 +18,25 @@ void safePrint(void *ptr, int type)
     }
 }
 
+int main()
+{
+    int arrI[10];
+    int arrF[10];
+    int type;
+
+    printf("Enter 10 integers:\n");
+
+        for (int i = 0; i < 10; i++)
+        {
+            scanf("%d", arrI + i);
+        }
+
+    printf("Enter 10 floating-point values:\n");
+
+        for (int i = 0; i < 10; i++)
+        {
+            scanf("%f", arrF + i);
+        }
+
+    return 0;
+}
