@@ -44,6 +44,30 @@ int main()
     printf("Enter your choice: ");
     scanf("%d", &type);
 
-    
+    if (type == 0)
+    {
+        printf("\nInteger values and addresses:\n");
+
+        for (int i = 0; i < 10; i++)
+        {
+            safePrint(arrI + i, type);
+        }
+    }
+    else if (type == 1)
+    {
+        printf("\nFloat values and addresses:\n");
+
+        for (int i = 0; i < 10; i++)
+        {
+            safePrint(arrF + i, type);
+        }
+    }
+    else
+    {
+        printf("Invalid type!\n");
+    }
+
+    printf("\nTesting NULL pointer it is null or not:\n");
+    safePrint(NULL, type);
     return 0;
 }
