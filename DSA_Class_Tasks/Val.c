@@ -26,4 +26,16 @@ int main() {
         scanf("%f",arrF + i);
     }
 
+    printf("Element with address\n");
+    for(int i=0;i<10;i++) {
+        printf("%d\n",*(arrI + i));
+        printf("%p\n",arrI + i);
+    }
+
+    printf("Element with address\n");
+    for(int i=0;i<10;i++) {
+        printf("%.2f\n",*(arrF + i));
+        printf("%p\n",arrF + i);
+    }
+
     
