@@ -16,4 +16,14 @@ int main() {
         return 1;
     }
 
+    printf("Enter 10 integer val\n");
+    for(int i=0;i<10;i++) {
+        scanf("%d",arrI + i);
+    }
+
+    printf("Enter 10 float val\n");
+    for(int i=0;i<10;i++) {
+        scanf("%f",arrF + i);
+    }
+
     
