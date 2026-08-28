@@ -51,10 +51,12 @@ int main() {
     scanf("%d",&m);
     if(m <= n) {
         printf("Invalid Input");
+        free(arr_1);
+        free(arr_2);
+        return 1;
     }
-    else {
         temp =(int *)realloc(arr_1,m*sizeof(int));
-    }
+    
     
     if(temp == NULL) {
         printf("Reallocation failed");
