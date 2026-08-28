@@ -40,7 +40,16 @@ int main() {
     int m;
     printf("\nEnter the size of array greater than %d: ",n);
     scanf("%d",&m);
-    arr_1 =(int *)realloc(arr_1,m*sizeof(int));
+    int * temp =(int *)realloc(arr_1,m*sizeof(int));
+
+    if(temp == NULL) {
+        printf("Reallocation failed");
+        free(arr_1);
+        free(arr_2);
+        return 1;
+
+    }
+    arr_1 = temp;
 
     printf("\nEnter %d element\n",m-n);
     for(int i=n;i<m;i++) {
@@ -61,8 +70,10 @@ int main() {
     }
 
     free(arr_1);
+    arr_1 = NULL;
     free(arr_2);
-    free(p);
+    arr_2 = NULL;
+    p = NULL;
 
     return 0;
 }
