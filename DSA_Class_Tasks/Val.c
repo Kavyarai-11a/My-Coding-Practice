@@ -38,4 +38,37 @@ int main() {
         printf("%p\n",arrF + i);
     }
 
-    
+    int type;
+    printf("Select one type (0/1)\n");
+    printf("0 for integer\n");
+    printf("1 for float\n");
+    printf("Enter a type : ");
+    scanf("%d",&type);
+
+    if(type == 0) {
+        int val;
+        printf("Enter a integer value : ");
+        scanf("%d",&val);
+        printf("%p\n",&val);
+        safePrint(&val,type);
+    }
+
+    else if(type == 1) {
+        float val;
+        printf("Enter a float value : ");
+        scanf("%f",&val);
+        printf("%p\n",&val);
+        safePrint(&val,type);
+    }
+
+    else {
+        printf("Invalid Input\n");
+    }
+
+    printf("NULL pointer demonestration\n");
+    safePrint(NULL,type);
+
+    free(arrI);
+    free(arrF);
+    return 0;
+}
