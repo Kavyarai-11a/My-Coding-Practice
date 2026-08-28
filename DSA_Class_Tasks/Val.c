@@ -72,3 +72,21 @@ int main() {
     free(arrF);
     return 0;
 }
+
+void safePrint(void *ptr, int type) {
+    if(ptr == NULL) {
+        printf("Its a NULL pointer");
+        return;
+    }
+    else if(type == 0) {
+        printf("Value = %d\n",*((int *)ptr));
+    }
+    else if(type == 1) {
+        printf("Value = %.2f\n",*((float *)ptr));
+    }
+    else {
+        printf("Invalid Input\n");
+    }
+}
+    
+    
