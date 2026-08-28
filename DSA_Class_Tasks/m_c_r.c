@@ -7,6 +7,10 @@ int main() {
     scanf("%d",&n);
 
     int * arr_1 = (int *)malloc(n*sizeof(int));
+    if(arr_1 == NULL) {
+    printf("Memory allocation failed");
+    return 1;
+    }
     p = arr_1;
     printf("Enter %d element\n",n);
     for(int i=0;i<n;i++) {
@@ -20,6 +24,10 @@ int main() {
     }
 
     int * arr_2 = (int *)calloc(n,sizeof(int));
+    if(arr_2 == NULL) {
+    printf("Memory allocation failed");
+    return 1;
+    }
 
     printf("\nInitial Array\n");
     for(int i=0;i<n;i++) {
@@ -37,11 +45,17 @@ int main() {
         printf("%p\n",(arr_2 + i));
     }
 
+    int * temp;
     int m;
     printf("\nEnter the size of array greater than %d: ",n);
     scanf("%d",&m);
-    int * temp =(int *)realloc(arr_1,m*sizeof(int));
-
+    if(m <= n) {
+        printf("Invalid Input");
+    }
+    else {
+        temp =(int *)realloc(arr_1,m*sizeof(int));
+    }
+    
     if(temp == NULL) {
         printf("Reallocation failed");
         free(arr_1);
