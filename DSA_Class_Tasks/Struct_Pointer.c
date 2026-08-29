@@ -46,3 +46,12 @@ void par_1(struct Employee e) {
 
 }
 
+void par_2(struct Employee *e) {
+
+    printf("Employee Id : %d\n",e->ID);
+
+    printf("Emplyee name : %s\n",e->name);
+
+    printf("Employee Salary : %.2f\n",e->salary);
+    
+}
