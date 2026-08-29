@@ -9,3 +9,30 @@ struct Employee {
 void par_1(struct Employee e);
 void par_2(struct Employee *e);
 
+int main() {
+
+    struct Employee *e;
+    e = malloc(sizeof(struct Employee));
+    if(e == NULL) {
+        printf("Memory not allocated\n");
+        return 1;
+    }
+
+    printf("Enter Id of the employee : ");
+    scanf("%d",&e->ID);
+
+    printf("Enter name of emplyee : ");
+    scanf("%49s",e->name);
+
+    printf("Enter salary of employee : ");
+    scanf("%f",&e->salary);
+    
+    par_1(*e);
+    par_2(e);
+
+    free(e);
+
+    return 0;
+
+}
+
