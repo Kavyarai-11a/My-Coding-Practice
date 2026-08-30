@@ -37,4 +37,16 @@ int main() {
         return 1;
     }
 
-    
+    int result = sequentialSearch (arr,n,target);
+
+    if(result == -1) {
+        printf("Element is not in array\n");
+    }
+    else {
+        printf("Element is at %d index\n",result);
+    }
+
+    free(arr);
+    return 0;
+}
+
