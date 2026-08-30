@@ -28,4 +28,13 @@ int main() {
         }
     }
 
+    int target;
+    printf("Enter the element to be search\n");
+    scanf("%d",&target);
+    if(target < -1000000000 || target > 1000000000) {
+        printf("Invalid Input\n");
+        free(arr);
+        return 1;
+    }
+
     
