@@ -24,4 +24,15 @@ int main() {
         scanf("%f",&(B + i)->price);
     }
 
+    int max = 0;
+    for(int i=1;i<n;i++) {
+        if((B + i)->price > (B + max)->price) {
+            max = i;
+        }
+    }
+
+    printf("Most expensive book : %.2f\n",(B + max)->price);
+
+    return 0;
     
+}
