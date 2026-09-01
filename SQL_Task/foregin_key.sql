@@ -31,3 +31,9 @@ status varchar(20) default ("ongoing")
 alter table Project add StartDate date;
 alter table Project modify ProjectName varchar(150);
 
+create table ProjectStaging (
+ProjectId int,
+Note varchar(50)
+);
+
+
