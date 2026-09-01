@@ -44,6 +44,20 @@ values
 truncate table ProjectStaging;
 describe ProjectStaging;
 
+insert into Department(DeptID,DeptName)
+values
+(1,"a"),
+(2,"b");
+
+insert into EMPLOYEE (EmpID,EmpName,Email,Salary,DeptID)
+values
+(1,"A","A@",100000,1),
+(2,"B","B@",100000,2);
+
+insert into Project(ProjectID,ProjectName,Budget,DeptID,status)
+values
+(1,"A",100000,1,"progressing"),
+(2,"B",100000,2,"stop");
 
 
 
