@@ -27,3 +27,7 @@ DeptID VARCHAR(50),
 foreign key (DeptID) references Department (DeptID),
 status varchar(20) default ("ongoing")
 );
+
+alter table Project add StartDate date;
+alter table Project modify ProjectName varchar(150);
+
