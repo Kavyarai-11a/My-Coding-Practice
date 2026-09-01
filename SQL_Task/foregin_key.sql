@@ -41,4 +41,9 @@ values
 (101,"A"),
 (102,"B");
 
+truncate table ProjectStaging;
+describe ProjectStaging;
+
+
+
 
