@@ -36,4 +36,9 @@ ProjectId int,
 Note varchar(50)
 );
 
+insert into ProjectStaging(ProjectID, Note)
+values
+(101,"A"),
+(102,"B");
+
 
