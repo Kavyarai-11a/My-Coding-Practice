@@ -18,3 +18,22 @@ Node * Createnode(int data) {
 
     return newNode;
 }
+
+//pushing node from front in linked list from scrach
+
+int insertFront(Node **head,int data) {
+    Node * newNode = Createnode(data);
+    if(newNode == NULL) {
+        return -1;
+    }
+
+    if(*head == NULL) {
+        *head = newNode;
+    }
+    else {
+        newNode->link = *head;
+        *head = newNode;
+    }
+
+    return 0;
+}
