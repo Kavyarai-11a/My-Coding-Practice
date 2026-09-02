@@ -74,23 +74,22 @@ int insertPosition(Node ** head,int data,int pos) {
         newNode->link = *head;
         *head = newNode;
     }
-    else {
-        Node *temp = *head;
-        for(int i=1;i<pos-1;i++) {
-            if(temp == NULL) {
-                free(newNode);
-                return -1;
-            }
-
-            temp = temp->link;
-        }
-
+    
+    Node *temp = *head;
+    for(int i=1;i<pos-1;i++) {
         if(temp == NULL) {
             free(newNode);
             return -1;
         }
 
-        newNode->link = temp->link;
-        temp->link = newNode;
+        temp = temp->link;
     }
+    if(temp == NULL) {
+        free(newNode);
+        return -1;
+    }
+
+    newNode->link = temp->link;
+    temp->link = newNode;
+    
 }
