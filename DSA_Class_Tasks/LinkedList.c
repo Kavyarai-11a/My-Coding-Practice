@@ -58,3 +58,39 @@ int insertEnd(Node **head,int data) {
 
     return 0;
 }
+
+//inserting a node in linked list at any position
+int insertPosition(Node ** head,int data,int pos) {
+    if(pos < 1) {
+        return -2;
+    }
+
+    Node * newNode = Createnode(data);
+    if(newNode == NULL) {
+        return -1;
+    }
+
+    if(pos == 1) {
+        newNode->link = *head;
+        *head = newNode;
+    }
+    else {
+        Node *temp = *head;
+        for(int i=1;i<pos-1;i++) {
+            if(temp == NULL) {
+                free(newNode);
+                return -1;
+            }
+
+            temp = temp->link;
+        }
+
+        if(temp == NULL) {
+            free(newNode);
+            return -1;
+        }
+
+        newNode->link = temp->link;
+        temp->link = newNode;
+    }
+}
