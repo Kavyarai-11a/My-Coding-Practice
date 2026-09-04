@@ -114,15 +114,15 @@ int deletePosition(Node **head,int pos) {
 
     Node *prev = *head;
     for(int i=1;i<pos-1;i++) {
-        if(prev == NULL) {
+        if(prev->link == NULL) {
             return -2;
         }
 
         prev = prev->link;
     }
 
-    if(prev == NULL) {
-            return -2;
+    if(prev->link == NULL) {
+        return -2;
     }
 
     Node *temp = prev->link;
