@@ -130,3 +130,17 @@ int deletePosition(Node **head,int pos) {
     free(temp);
     return 0;
 }
+
+//displaing head 
+
+void display (Node * head) {
+    Node * temp = head;
+    if(temp == NULL) {
+        return -2;
+    }
+
+    while(temp != NULL) {
+        printf("%d",temp->link);
+        temp = temp->link;
+    }
+}
