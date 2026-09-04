@@ -93,3 +93,40 @@ int insertPosition(Node ** head,int data,int pos) {
     temp->link = newNode;
     
 }
+
+//deleting a position in linked list
+int deletePosition(Node **head,int pos) {
+    if(pos < 1) {
+        return -2;
+    }
+
+    if(pos == 1) {
+        Node *temp = *head;
+
+        if(temp == NULL) {
+            return -1;
+        }
+
+        *head = temp->link;
+        free(temp);
+        return 0;
+    }
+
+    Node *prev = *head;
+    for(int i=1;i<pos-1;i++) {
+        if(prev == NULL) {
+            return -2;
+        }
+
+        prev = prev->link;
+    }
+
+    if(prev == NULL) {
+            return -2;
+    }
+
+    Node *temp = prev->link;
+    prev->link = temp->link;
+    free(temp);
+    return 0;
+}
