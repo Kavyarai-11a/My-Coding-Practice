@@ -140,3 +140,16 @@ void display (Node * head) {
         temp = temp->link;
     }
 }
+
+//deleting the link list
+int deletelist(Node **head) {
+    if(*head == NULL) {
+        return -2;
+    }
+    while(*head != NULL) {
+        Node *temp = *head;
+        *head = (*head)->link;
+        free(temp);
+    }
+    return 0;
+}
