@@ -153,3 +153,17 @@ int deletelist(Node **head) {
     }
     return 0;
 }
+
+//search a elelment in linked list
+Node * search(Node ** head, int data) {
+    Node *temp = *head;
+
+    while(temp != NULL) {
+        if(temp->data == data) {
+            return temp;
+        }
+        temp = temp->link;
+    }
+
+    return NULL;
+}
