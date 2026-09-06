@@ -92,3 +92,29 @@ int main()
 
  
 
+int *allocateScores(int n)
+
+{
+    int *scores = calloc(n,sizeof(int));
+    if(scores == NULL) {
+        return NULL;
+    }
+
+    return scores;
+    
+}
+
+ int *resizeScores(int *arr, int newSize)
+
+{
+    int *resized = realloc(arr,newSize*sizeof(int));
+    if(resized == NULL) {
+         return NULL;
+    }
+
+    return resized;
+
+}
+
+ 
+
