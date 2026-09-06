@@ -174,3 +174,22 @@ int findMax(int *arr, int n)
 
  
 
+int findMin(int *arr, int n)
+
+{
+    if(arr == NULL) {
+        return 1;
+    }
+    int temp = 0;
+    for(int i=1;i<n;i++) {
+        if(*(arr + i) < *(arr + temp)) {
+            temp = i;
+        }
+    }
+    printf("Lowest Score = %d\n",*(arr + temp));
+    return 0;
+   
+}
+
+ 
+
