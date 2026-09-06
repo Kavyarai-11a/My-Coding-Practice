@@ -193,3 +193,31 @@ int findMin(int *arr, int n)
 
  
 
+int countAboveAverage(int *arr, int n, float average)
+
+{
+    if(arr == NULL) {
+        return 1;
+    }
+    int count = 0;
+    for(int i=0;i<n;i++) {
+        if(*(arr + i) > average) {
+            count ++;
+        }
+    }
+    printf("Scores that are above average are %d\n",count);
+    return 0;
+
+}
+
+ 
+
+void freeMemory(int *arr)
+
+{
+    free(arr);
+}
+ 
+
+
+
