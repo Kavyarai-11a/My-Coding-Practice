@@ -118,3 +118,24 @@ int *allocateScores(int n)
 
  
 
+void readScores(int *arr, int start, int end)
+
+{
+    for(int i=start;i<end;i++) {
+        scanf("%d",(arr + i));
+    }
+}
+
+ 
+
+void printScores(int *arr, int n)
+
+{
+    for(int i=0;i<n;i++) {
+        printf("%d ",*(arr + i));
+    }
+    printf("\n");
+}
+
+ 
+
