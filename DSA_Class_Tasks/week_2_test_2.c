@@ -139,3 +139,19 @@ void printScores(int *arr, int n)
 
  
 
+float calculateAverage(int *arr, int n)
+
+{
+    float sum = 0;
+    for(int i=0;i<n;i++) {
+       sum += *(arr + i);
+    }
+    //printf("%f\n",sum);
+    float avg = sum/n;
+    printf("Average score = %.2f\n", avg);
+    return avg;
+    
+}
+
+ 
+
