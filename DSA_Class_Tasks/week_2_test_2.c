@@ -24,5 +24,71 @@ int countAboveAverage(int *arr, int n, float average);
 
 void freeMemory(int *arr);
 
+int main()
+
+{
+
+    int n, new_n;
+
+    printf("Enter size of array : ");
+    if(scanf("%d",&n) != 1 || n < 1) {
+        printf("Invalid Input\n");
+        return 1;
+    } 
+
+    int *scores = allocateScores(n);
+    if(scores == NULL) {
+        printf("Memory not allocated\n");
+        return 1;
+    }
+
+    printf("Enter %d scores\n",n);
+    readScores(scores,0,n);
+
+    printf("Array elements\n");
+    printScores(scores,n);
+
+    float average;
+    average =  calculateAverage(scores,n);
+
+    findMax(scores,n);
+    findMin(scores,n);
+    countAboveAverage(scores,n,average);
+
+    
+    printf("Enter new size of array : ");
+    if(scanf("%d",&new_n) != 1 || new_n < 1) {
+        printf("Invalid Input\n");
+        return 1;
+    } 
+    
+    int *resized = resizeScores(scores,new_n);
+    if(resized == NULL) {
+        printf("Memory not allocated\n");
+        free(scores);
+        return 1;
+    }
+
+    if(new_n > n) {
+        printf("Enter %d scores\n",new_n - n);
+        readScores(resized,n,new_n);
+    }
+
+    scores = resized;
+    printf("Array elements\n");
+    printScores(scores,new_n);
+
+    average =  calculateAverage(scores,new_n);
+
+    findMax(scores,new_n);
+    findMin(scores,new_n);
+    countAboveAverage(scores,new_n,average);
+
+    freeMemory(scores);
+
+    return 0;
+
+}
+
  
 
