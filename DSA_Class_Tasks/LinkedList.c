@@ -167,3 +167,8 @@ Node * search(Node ** head, int data) {
 
     return NULL;
 }
+
+//delete front, delete key, delete key,delete position
+
+//delete front element of the list
+int delete

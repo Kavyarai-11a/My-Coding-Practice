@@ -1,85 +1,60 @@
 #include<stdio.h>
 #include<stdlib.h>
-typedef struct node {
-    int data;
-    int * link;
-}Node;
-Node * createNode(int data) {
-    Node *newNode = (Node *)malloc(sizeof(Node));
-    if(newNode == NULL) {
-        return NULL;
-    }
-    newNode->data = data;
-    newNode->link = NULL;
 
-    return newNode;
-}
+typedef struct 
+{
+    int id;
+    char title[30];
+    float price;
+}Book;
 
-int insertFornt(Node **head,int data) {
-    Node * newNode = createNode(data);
-    if(newNode == NULL) {
+int main() 
+{
+    Book *b;
+    int n;
+    printf("Enter number of books : ");
+    if(scanf("%d",&n) != 1 || n < 1) 
+    {
+        printf("Invalid Input\n");
         return -1;
     }
-    if(*head == NULL) {
-        *head = newNode;
-    }
-    else {
-        newNode->link = *head;
-        *head = newNode;
-    }
-    return 0;
-}
 
-int insertEnd(Node **head,int data) {
-    Node *newNode = createNode(data);
-    if(newNode == NULL) {
-        return -1;
-    }
-    if(*head == NULL) {
-        *head = newNode;
-    }
-
-    else {
-        Node *temp = *head;
-        while(temp->link != NULL) {
-            temp = temp->link;
-        }
-        temp->link = newNode;
-    }
-    
-    return 0;
-}
-
-int insertPos(Node **head,int data,int pos) {
-    if(pos < 1) {
+    b = malloc(n * sizeof(Book));
+    if(b == NULL) 
+    {
+        printf("Memory not allocate\n");
         return -2;
     }
 
-    Node *newNode = createNode(data);
-    if(newNode == NULL) {
-        return -1;
+    for(int i=0;i<n;i++)
+    {
+        printf("Enter id of book %d : ",i + 1);
+        scanf("%d",&(b + i)->id);
+        printf("Enter title of book %d : ",i + 1);
+        scanf(" %29[^\n]",(b + i)->title);
+        printf("Enter price of book %d : ",i + 1);
+        scanf("%f",&(b + i)->price);
     }
 
-    if(pos == 1) {
-        newNode->link = *head;
-        *head = newNode;
-    }
-
-    Node * temp = *head;
-    for(int i=0;i<pos-1;i++) {
-        if(temp->link == NULL) {
-            free(newNode);
-            return -3;
+    int max = 0;
+    for(int i=1;i<n;i++)
+    {
+        if((b + i)->price > (b + max)->price)
+        {
+            max = i;
         }
-        temp = temp->link;
     }
 
-    if(temp == NULL) {
-            return -3;
-        }
+    printf("Most expensive book is %d\n",1 + max);
+    printf("Enter id of book %d : ",max + 1);
+    printf("%d\n",(b + max)->id);
+    printf("Enter title of book %d : ",max + 1);
+    printf("%s\n",(b + max)->title);
+    printf("Enter price of book %d : ",max + 1);
+    printf("%.2f\n",(b + max)->price);
     
-    newNode->link = temp->link;
-    temp->link = newNode;
+    free(b);
 
     return 0;
+
 }

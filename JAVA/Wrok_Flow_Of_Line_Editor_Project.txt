@@ -1,0 +1,148 @@
+# LINE EDITOR IN C
+
+### 1. Data Structure
+
+**Dynamic Array of Strings**
+
+```text
+Document
+ ├── char **lines
+ ├── int count
+ └── int capacity
+```
+
+* `lines[i]` → stores one line of text
+* `count` → number of lines
+* `capacity` → allocated space
+* When full → `capacity × 2` using `realloc()`
+* Each line is dynamically allocated using `malloc()`
+
+**Why?**
+Provides direct access to lines and is simpler than a linked list. Insert/delete require shifting pointers.
+
+---
+
+### 2. Main Logic / Flowchart
+
+```text
+START
+  ↓
+Initialize Document
+  ↓
+Display prompt
+  ↓
+Read command
+  ↓
+Parse command & arguments
+  ↓
+Identify command
+  ↓
+ ┌──────────┬──────────┬──────────┬──────────┐
+Insert    Delete     Display     Save/Load
+  │          │           │           │
+  └──────────┴───────────┴───────────┘
+              ↓
+        Search / Replace
+              ↓
+         Show result
+              ↓
+       Command = exit?
+         ↓ NO       ↓ YES
+      Repeat     Free memory
+                    ↓
+                   END
+```
+
+### 3. Core Algorithms
+
+**INSERT(line_no, text)**
+
+```text
+Validate line number
+Allocate memory for new line
+If array full → resize
+Shift pointers right
+Place new line at line_no
+Increase count
+```
+
+**DELETE(line_no)**
+
+```text
+Validate line number
+Free selected line
+Shift remaining pointers left
+Decrease count
+```
+
+**DISPLAY**
+
+```text
+For i = 0 to count-1
+    Print line number and lines[i]
+```
+
+**SAVE**
+
+```text
+Open file in write mode
+For each line
+    Write line + newline
+Close file
+```
+
+**LOAD**
+
+```text
+Open file in read mode
+Create temporary document
+Read each line
+Store it in temporary document
+If successful → replace current document
+Close file
+```
+
+**SEARCH**
+
+```text
+For each line
+    If query found using strstr()
+        Print line number
+```
+
+**REPLACE**
+
+```text
+Validate line number/text
+Find old text
+Create new string
+Replace old text with new text
+Update line
+```
+
+### 4. Commands
+
+```text
+append <text>                 → Add line
+insert <no> <text>            → Insert line
+delete <no>                   → Delete line
+display                       → Show document
+save <file>                   → Save
+load <file>                   → Load
+search <text>                 → Search
+replace <no> <old> <new>      → Replace
+replaceall <old> <new>        → Replace everywhere
+undo                          → Undo last edit
+count                         → Count lines/words
+exit                          → Exit
+```
+
+### 5. Memory Management
+
+```text
+malloc()  → allocate line
+realloc() → grow line-pointer array
+free()    → release deleted/old lines
+```
+
+**Important:** Every dynamically allocated line and the `lines` array must be freed before exiting.
