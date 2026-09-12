@@ -187,3 +187,32 @@ int deleteFront(Node **head)
     return 0;
 
 }
+
+//deleting last element of list
+int deletelast(Node **head)
+{
+    if(head == NULL)
+    {
+        return -3;
+    }
+    if(*head == NULL)
+    {
+        return -4;
+    }
+    if((*head)->link == NULL)
+    {
+        free(*head);
+        *head = NULL;
+        return 0;
+    }
+    Node *temp = *head;
+    Node *prev = *head;
+    while(temp->link != NULL)
+    {
+        prev = temp;
+        temp = temp->link;
+    }
+    prev->link =  NULL;
+    free(temp);
+    return 0;
+}
