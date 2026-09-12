@@ -1,60 +1,153 @@
-#include<stdio.h>
+#include <stdio.h>
 #include<stdlib.h>
+typedef struct node {
+    int data;
+    int link;
+}Node;
 
-typedef struct 
+//Create new node 
+Node *createnewNode(int data)
 {
-    int id;
-    char title[30];
-    float price;
-}Book;
-
-int main() 
-{
-    Book *b;
-    int n;
-    printf("Enter number of books : ");
-    if(scanf("%d",&n) != 1 || n < 1) 
+    Node *newNode = (Node *)malloc(sizeof(Node));
+    if(newNode == NULL)
     {
-        printf("Invalid Input\n");
+        return NULL;
+    }
+
+    newNode->data = data;
+    newNode->link = NULL;
+
+    return newNode;
+}
+//inserting a value from front in a linked list
+int insetFront(Node ** head,int data)
+{
+    Node *newNode = createnewNode(data);
+    if(newNode = NULL)
+    {
         return -1;
     }
 
-    b = malloc(n * sizeof(Book));
-    if(b == NULL) 
+    if(*head == NULL)
     {
-        printf("Memory not allocate\n");
-        return -2;
+        *head = newNode;
     }
 
-    for(int i=0;i<n;i++)
-    {
-        printf("Enter id of book %d : ",i + 1);
-        scanf("%d",&(b + i)->id);
-        printf("Enter title of book %d : ",i + 1);
-        scanf(" %29[^\n]",(b + i)->title);
-        printf("Enter price of book %d : ",i + 1);
-        scanf("%f",&(b + i)->price);
-    }
-
-    int max = 0;
-    for(int i=1;i<n;i++)
-    {
-        if((b + i)->price > (b + max)->price)
-        {
-            max = i;
-        }
-    }
-
-    printf("Most expensive book is %d\n",1 + max);
-    printf("Enter id of book %d : ",max + 1);
-    printf("%d\n",(b + max)->id);
-    printf("Enter title of book %d : ",max + 1);
-    printf("%s\n",(b + max)->title);
-    printf("Enter price of book %d : ",max + 1);
-    printf("%.2f\n",(b + max)->price);
-    
-    free(b);
+    newNode->link = *head;
+    *head = newNode;
 
     return 0;
+}
 
+//inserting a value from end in a linked list
+int insertEnd(Node **head,int data)
+{
+    Node *newNode = createnewNode(data);
+    if(newNode = NULL)
+    {
+        return -1;
+    }
+
+    if(*head == NULL)
+    {
+        *head = newNode;
+    }
+
+    Node *temp = *head;
+    while(temp->link != NULL)
+    {
+        temp = temp->link;
+    }
+    temp->link = newNode;
+    free(temp);
+    return 0;
+}
+
+//inserting data at any position in linked list
+int Posinsert(Node **head,int data,int Pos)
+{
+    if(Pos < 1)
+    {
+        return -2;
+    }
+    Node *newNode = createnewNode(data);
+    if(newNode == NULL)
+    {
+        return -1;
+    }
+
+    if(Pos == 1)
+    {
+        newNode->link = *head;
+        *head = newNode;
+        return 0;
+    }
+
+    Node *temp = *head;
+    for(int i=1;i<Pos-1;i++)
+    {
+        if(temp == NULL) 
+        {
+            free(newNode);
+            return -1;
+        }
+        temp = temp->link;
+    }
+    if(temp == NULL) 
+    {
+        free(newNode);
+        return -1;
+    }
+    newNode->link = temp->link;
+    temp->link = newNode;
+    free(temp);
+    return 0;
+
+}
+
+//deleting 1st element
+int deleteFront(Node **head)
+{
+    if(head == NULL)
+    {
+        return -3;
+    }
+    if(*head == NULL)
+    {
+        return -4;
+    }
+    Node *temp = *head;
+    *head = (*head)->link;
+    free(temp);
+    return 0;
+
+}
+
+//deleting last element
+int deletelast(Node **head)
+{
+    if(head == NULL)
+    {
+        return -3;
+    }
+    if(*head == NULL)
+    {
+        return -4;
+    }
+    if((*head)->link == NULL)
+    {
+        free(*head);
+        *head = NULL;
+        return 0;
+    }
+    Node *temp = *head;
+    Node *prev = *head;
+    while(temp->link != NULL)
+    {
+        prev = temp;
+        temp = temp->link;
+    }
+    prev->link =  NULL;
+    free(temp);
+    return 0;
 }

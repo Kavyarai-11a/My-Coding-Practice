@@ -171,4 +171,19 @@ Node * search(Node ** head, int data) {
 //delete front, delete key, delete key,delete position
 
 //delete front element of the list
-int delete
+int deleteFront(Node **head)
+{
+    if(head == NULL)
+    {
+        return -3;
+    }
+    if(*head == NULL)
+    {
+        return -4;
+    }
+    Node *temp = *head;
+    *head = (*head)->link;
+    free(temp);
+    return 0;
+
+}
