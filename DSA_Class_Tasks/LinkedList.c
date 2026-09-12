@@ -216,3 +216,22 @@ int deletelast(Node **head)
     free(temp);
     return 0;
 }
+
+//deleteing a key from list
+int deleteKey(Node **head,int key)
+{
+    if(head == NULL)
+    {
+        return -3;
+    }
+    if(*head == NULL)
+    {
+        return -4;
+    }
+    Node *temp = *head;
+    if((*head)->data == key)
+    {
+        *head = (*head)->link;
+        free(temp);
+        return 0;
+    }

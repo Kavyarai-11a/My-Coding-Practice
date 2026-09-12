@@ -59,7 +59,6 @@ int insertEnd(Node **head,int data)
         temp = temp->link;
     }
     temp->link = newNode;
-    free(temp);
     return 0;
 }
 
@@ -100,7 +99,6 @@ int Posinsert(Node **head,int data,int Pos)
     }
     newNode->link = temp->link;
     temp->link = newNode;
-    free(temp);
     return 0;
 
 }
@@ -150,4 +148,37 @@ int deletelast(Node **head)
     prev->link =  NULL;
     free(temp);
     return 0;
+}
+
+//deleteing a key from list
+int deleteKey(Node **head,int key)
+{
+    if(head == NULL)
+    {
+        return -3;
+    }
+    if(*head == NULL)
+    {
+        return -4;
+    }
+    Node *temp = *head;
+    if((*head)->data == key)
+    {
+        *head = (*head)->link;
+        free(temp);
+        return 0;
+    }
+    Node *prev = *head;
+    while(temp != NULL)
+    {
+        if(temp->data == key)
+        {
+            prev->link = temp->link;
+            free(temp);
+            return 0;
+        }
+        prev = temp;
+        temp = temp->link;
+    }
+    return -1;
 }
