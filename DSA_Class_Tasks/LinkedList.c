@@ -235,3 +235,17 @@ int deleteKey(Node **head,int key)
         free(temp);
         return 0;
     }
+    Node *prev = *head;
+    while(temp != NULL)
+    {
+        if(temp->data == key)
+        {
+            prev->link = temp->link;
+            free(temp);
+            return 0;
+        }
+        prev = temp;
+        temp = temp->link;
+    }
+    return -1;
+}
