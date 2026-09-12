@@ -131,14 +131,15 @@ int deletePosition(Node **head,int pos) {
     return 0;
 }
 
-//displaing head 
+//displaing list
 
 void display (Node * head) {
     Node * temp = head;
     while(temp != NULL) {
-        printf("%d",temp->link);
+        printf("%d->",temp->data);
         temp = temp->link;
     }
+    printf("NULL");
 }
 
 //deleting the link list
