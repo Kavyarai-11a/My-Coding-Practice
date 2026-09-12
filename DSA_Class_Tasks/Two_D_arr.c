@@ -15,6 +15,8 @@ int main()
         arr[i] = malloc(columns * sizeof(int));
     }
 
+    printf("Enter %d elements\n",rows*columns);
+
     for(int i=0;i<rows;i++)
     {
         for(int j=0;j<columns;j++)
@@ -23,6 +25,7 @@ int main()
         }
     }
 
+    printf("Array Display\n");
     for(int i=0;i<rows;i++)
     {
         for(int j=0;j<columns;j++)
