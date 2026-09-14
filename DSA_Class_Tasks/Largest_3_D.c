@@ -25,4 +25,16 @@ int main()
         }
     }
 
+    printf("Enter %d elements\n",lays * rows * cols );
+    for(int i=0;i<lays;i++)
+    {
+        for(int j=0;j<rows;j++)
+        {
+            for(int k=0;k<cols;k++)
+            {
+                scanf("%d",&arr[i][j][k]);
+            }
+        }
+    }
+
     
