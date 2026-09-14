@@ -54,6 +54,19 @@ int main()
         }
     }
 
+    printf("Largest number in array : %d\n",arr[temp1][temp2][temp3]);
     
+    for(int i=0;i<lays;i++)
+    {
+        for(int j=0;j<rows;j++)
+        {
+                free(arr[i][j]);
+        }
+        free(arr[i]);
+    }
+    free(arr);
+
+    return 0;
+}
     
     
