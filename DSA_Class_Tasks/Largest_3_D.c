@@ -37,4 +37,23 @@ int main()
         }
     }
 
+    int temp1 = 0,temp2 = 0,temp3 = 0;
+    for(int i=0;i<lays;i++)
+    {
+        for(int j=0;j<rows;j++)
+        {
+            for(int k=1;k<cols;k++)
+            {
+                if(arr[i][j][k] > arr[temp1][temp2][temp3])
+                {
+                    temp1 = i;
+                    temp2 = j;
+                    temp3 = k;
+                }
+            }
+        }
+    }
+
+    
+    
     
