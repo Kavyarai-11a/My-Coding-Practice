@@ -25,7 +25,4 @@ class StudentMarks {
     }
 }
 
-public class Wrraper_class {
 
-    
-}
