@@ -19,6 +19,11 @@ class WrapperDemo {
         int total = i1 + i2 + i3;
         double avg = total/(double)3;
 
+        System.out.println("Marks 1 : " + i1);
+        System.out.println("Marks 2 : " + i2);
+        System.out.println("Marks 3 : " + i3);
+        System.out.println("Total Marks : " + total);
+        System.out.println("Avg Marks : " + avg);
         
     }
 }
