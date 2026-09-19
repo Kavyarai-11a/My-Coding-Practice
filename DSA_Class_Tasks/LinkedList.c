@@ -250,3 +250,5 @@ int deleteKey(Node **head,int key)
     }
     return -1;
 }
+
+//reverse linked list
