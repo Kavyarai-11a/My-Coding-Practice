@@ -101,7 +101,7 @@ int insertPos(Node **head,int data,int pos)
     }
 
     Node *temp = *head;
-    for(int i=1;i<pos-1;i++)
+    for(int i=1;i<pos-1;i++)    //it is pos - 1 bcz it starts from one 1 and while i=1 in that case pos become 2
     {
         if(temp == NULL)
         {
@@ -285,3 +285,68 @@ int deleteList(Node **head)
 
     return 0;
 }
+
+int reverseList(Node **head)
+{
+    if(head == NULL)
+    {
+        return -3;
+    }
+
+    if(*head == NULL)
+    {
+        return -4;
+    }
+
+    Node *prev = NULL;
+    Node *curr = *head;
+    Node *next;
+
+    while(curr != NULL)
+    {
+        next = curr->link;
+        curr->link = prev;
+        prev = curr;
+        curr = next;
+    }
+    *head = prev;
+    return 0;
+}
+
+int traverList(Node **head1,Node **head2)
+{
+    if(head1 == NULL || head2 == NULL)
+    {
+        return -3;
+    }
+    
+    if(*head1 == NULL && *head2 == NULL)
+    {
+        return -4;
+    }
+
+    if(*head1 == NULL)
+    {
+        *head1 = *head2;
+        *head2 = NULL;
+        return 0;
+    }
+
+    if(*head2 == NULL)
+    {
+        return 0;
+    }
+
+    Node *temp = *head1;
+    while((temp)->link != NULL)
+    {
+        temp = temp->link;
+    }
+
+    temp->link = *head2;
+    *head2 = NULL;
+    return 0;
+}
+
+int search(Node)
+
