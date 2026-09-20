@@ -52,7 +52,7 @@ int main()
         return 1;
     }
 
-    int index = sequentialSearch(marks, n, m, target);      <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    int index = sequentialSearch(marks, n, m, target);      
 
     if (index != -1)
     {
@@ -118,7 +118,7 @@ void printMarks(int **marks, int n, int m)
     {
         for(int j=0;j<m;j++)
         {
-            printf("%d ",&marks[i][j]);
+            printf("%d ",marks[i][j]);
         }
         printf("\n");
     }
@@ -131,14 +131,13 @@ int sequentialSearch(int **marks, int n, int m, int target)
     int count = 0;
     for(int i=0;i<n;i++)
     {
-        count++;
         for(int j=0;j<m;j++)
         {
-            count++;
             if(marks[i][j] == target)
             {
                 return count;
             }
+            count++;
         }
     }
     /* write logic here */
