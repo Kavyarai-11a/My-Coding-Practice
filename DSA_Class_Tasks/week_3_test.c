@@ -38,10 +38,10 @@ int main()
 
     /* ---------- 2. Read marks for each student ---------- */
     printf("\nEnter marks for %d students (%d values each):\n", n, m);
-    readMarks(marks, n, m);                                   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
+    readMarks(marks, n, m);                                  
     printf("Marks after user input:\n");
-    printMarks(marks, n, m);
+    printMarks(marks, n, m);             <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
     /* ---------- 3. Search for target mark ---------- */
     // \n is explicitly required here by the VPL test cases
@@ -114,6 +114,14 @@ void readMarks(int **marks, int n, int m)
 void printMarks(int **marks, int n, int m)
 {
     /* write logic here */
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            printf("%d ",&marks[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 /* Sequential search across the array of pointers.
