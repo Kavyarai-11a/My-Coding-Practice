@@ -100,7 +100,13 @@ int **allocateMarks(int n, int m)
 void readMarks(int **marks, int n, int m)
 {
     /* write logic here */
-    
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            scanf("%d",&marks[i][j]);
+        }
+    }
 }
 
 /* Display marks for every student, one row per student, values
