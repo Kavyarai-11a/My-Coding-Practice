@@ -148,5 +148,10 @@ int sequentialSearch(int **marks, int n, int m, int target)
 /* Release each student's row, then the array of pointers itself */
 void freeMarks(int **marks, int n)
 {
+    for (int i=0;i<n;i++)
+    {
+        free(marks[i]);
+    }
+    free(marks);
     /* write logic here */
 }
