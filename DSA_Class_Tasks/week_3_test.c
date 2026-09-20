@@ -40,8 +40,7 @@ int main()
     printf("\nEnter marks for %d students (%d values each):\n", n, m);
     readMarks(marks, n, m);                                  
     printf("Marks after user input:\n");
-    printMarks(marks, n, m);             <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
+    printMarks(marks, n, m);             
 
     /* ---------- 3. Search for target mark ---------- */
     // \n is explicitly required here by the VPL test cases
@@ -53,7 +52,8 @@ int main()
         return 1;
     }
 
-    int index = sequentialSearch(marks, n, m, target);
+    int index = sequentialSearch(marks, n, m, target);      <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
     if (index != -1)
     {
         int studentIndex = index / m;
@@ -128,6 +128,19 @@ void printMarks(int **marks, int n, int m)
  * Must not use any built-in search functions. */
 int sequentialSearch(int **marks, int n, int m, int target)
 {
+    int count = 0;
+    for(int i=0;i<n;i++)
+    {
+        count++;
+        for(int j=0;j<m;j++)
+        {
+            count++;
+            if(marks[i][j] == target)
+            {
+                return count;
+            }
+        }
+    }
     /* write logic here */
     return -1;
 }
