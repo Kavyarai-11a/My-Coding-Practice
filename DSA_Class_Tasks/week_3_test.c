@@ -88,6 +88,11 @@ int **allocateMarks(int n, int m)
         marks[i] = malloc(m*sizeof(int));
         if(marks[i] == NULL)
         {
+            for(int j=0;j<i;j++)
+            {
+                free(marks[j]); 
+            }
+            free(marks);
             return NULL;
         }
     }
