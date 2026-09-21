@@ -398,10 +398,34 @@ int reverse(List *l)
         prev = curr;
         curr = next;
     }
-    
+
     l->tail = l->head;
     l->head = prev;
 
     return 0;
 
 }
+
+int traverse(List *l)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->head == NULL)
+    {
+        return -4;
+    }
+
+    Node *temp = l->head;
+    while(temp != NULL)
+    {
+        printf("%d->",temp->data);
+        temp = temp->link;
+    }
+    printf("NULL");
+    return 0;
+}
+
+
