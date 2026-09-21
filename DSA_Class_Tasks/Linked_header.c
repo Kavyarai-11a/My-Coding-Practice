@@ -428,4 +428,32 @@ int traverse(List *l)
     return 0;
 }
 
+Node *search(List *l,int key,Node *addr)
+{
+    if(l == NULL)
+    {
+        return NULL;
+    }
+
+    if(l->head)
+    {
+        return NULL;
+    }
+
+    Node *temp = l->head;
+
+    while(temp != NULL)
+    {
+        if(temp->data == key)
+        {
+            addr->data == key;
+            addr->link == temp;
+            return addr;
+        }
+        temp = temp->link;
+    }
+
+    return NULL;
+}
+
 
