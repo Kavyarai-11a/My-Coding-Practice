@@ -374,3 +374,21 @@ int ConcatList(List *l1,List *l2)
     return 0;
     
 }
+
+int reverse(List *l)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->head == NULL)
+    {
+        return -4;
+    }
+
+    Node *prev = NULL;
+    Node *curr = *head;
+    Node *next;
+
+}

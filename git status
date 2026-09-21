@@ -1,0 +1,14 @@
+[1mdiff --git a/DSA_Class_Tasks/LinkedList.c b/DSA_Class_Tasks/LinkedList.c[m
+[1mindex cc6f184..c7f7577 100644[m
+[1m--- a/DSA_Class_Tasks/LinkedList.c[m
+[1m+++ b/DSA_Class_Tasks/LinkedList.c[m
+[36m@@ -249,4 +249,6 @@[m [mint deleteKey(Node **head,int key)[m
+         temp = temp->link;[m
+     }[m
+     return -1;[m
+[31m-}[m
+\ No newline at end of file[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m//reverse linked list[m
+\ No newline at end of file[m
