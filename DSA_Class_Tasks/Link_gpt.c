@@ -42,3 +42,30 @@ List *createList(void)
 
     return newList;
 }
+
+int InsertFront(List *l, int data)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    Node *newNode = createNode(data);
+
+    if(newNode == NULL)
+    {
+        return -1;
+    }
+
+    newNode->link = l->head;
+    l->head = newNode;
+
+    if(l->tail == NULL)
+    {
+        l->tail = newNode;
+    }
+
+    l->count++;
+
+    return 0;
+}
