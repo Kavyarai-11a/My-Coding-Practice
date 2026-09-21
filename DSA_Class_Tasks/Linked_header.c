@@ -11,3 +11,17 @@ typedef struct
     Node *tail;
     int count;
 }List;
+
+Node *createNode(int data)
+{
+    Node *newNode = malloc(sizeof(int));
+    if(newNode == NULL)
+    {
+        return -1;
+    }
+
+    newNode->data = data;
+    newNode->link = NULL;
+
+    return newNode;
+}
