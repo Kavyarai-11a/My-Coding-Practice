@@ -69,3 +69,33 @@ int InsertFront(List *l, int data)
 
     return 0;
 }
+
+int InsertEnd(List *l, int data)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    Node *newNode = createNode(data);
+
+    if(newNode == NULL)
+    {
+        return -1;
+    }
+
+    if(l->head == NULL)
+    {
+        l->head = newNode;
+        l->tail = newNode;
+    }
+    else
+    {
+        l->tail->link = newNode;
+        l->tail = newNode;
+    }
+
+    l->count++;
+
+    return 0;
+}
