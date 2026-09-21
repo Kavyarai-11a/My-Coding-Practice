@@ -145,3 +145,32 @@ int InsertPos(List *l,int data,int Pos)
 
 }
 
+int deleteFront(List *l)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->head)
+    {
+        return -4;
+    }
+
+    if(l->head->link == NULL)
+    {
+        free(l->head);
+        free(l->tail);
+        l->head = NULL;
+        l->count--;
+        return 0;
+    }
+
+    Node *temp = l->head;
+    l->head = l->head->link;
+    free(temp);
+    l->count--;
+
+    return 0;
+}
+
