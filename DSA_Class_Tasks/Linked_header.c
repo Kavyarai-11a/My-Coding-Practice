@@ -25,3 +25,17 @@ Node *createNode(int data)
 
     return newNode;
 }
+List *createList(void)
+{
+    List *newList = malloc(sizeof(List));
+    if(newList == NULL)
+    {
+        return NULL;
+    }
+    newList->head = NULL;
+    newList->tail = NULL;
+    newList->count = 0;
+
+    return newList;
+}
+
