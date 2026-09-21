@@ -88,7 +88,7 @@ int InsertEnd(List *l,int data)
         return 0;
     }
 
-    Node *temp = l->tail;
+    Node *temp = l->tail;       //Simply be l->tail->link = newNode;
     temp->link = newNode;
     l->tail = newNode;
     l->count++;
@@ -130,6 +130,13 @@ int InsertPos(List *l,int data,int Pos)
             return 2;
         }
         temp = temp->link;
+        if(temp->link == NULL)
+        {
+            temp->link = newNode;
+            l->tail = newNode;
+            l->count++;
+            return 0;
+        }
     }
 
     if(temp == NULL)
