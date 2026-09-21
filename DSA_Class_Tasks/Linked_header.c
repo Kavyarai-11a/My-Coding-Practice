@@ -174,3 +174,93 @@ int deleteFront(List *l)
     return 0;
 }
 
+int deleteEnd(List *l)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->head == NULL)
+    {
+        return -4;
+    }
+
+    if(l->head->link == NULL)
+    {
+        free(l->head);
+        free(l->tail);
+        l->head = NULL;
+        l->count--;
+        return 0;
+    }
+
+    Node *temp = l->head;
+    while(temp->link->link != NULL)
+    {
+        temp = temp->link;
+    }
+
+    temp->link = NULL;
+    free(l->tail);
+    l->tail = temp;
+    l->count--;
+
+    return 0;
+}
+
+int deletePos(List *l,int Pos)
+{
+    if(Pos < 1)
+    {
+        return -2;
+    }
+
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->head == NULL)
+    {
+        return -4;
+    }
+
+    if(Pos == 1)
+    {
+        Node *temp = l->head;
+        l->head = l->head->link;
+        free(temp);
+        l->count--;
+
+        return 0;
+    }
+
+    Node *temp = l->head;
+    Node *prev = l->head;
+    for(int i=1;i<Pos;i++)
+    {
+        if(temp == NULL)
+        {
+            return -2;
+        }
+        prev = temp;
+        temp = temp->link;
+
+        if(temp->link == NULL)
+        {
+            prev->link = temp->link;
+            l->tail = temp;
+            free(temp);
+            l->count--;
+            return 0;
+        }
+    }
+
+    prev->link = temp->link;
+    free(temp);
+    l->count--;
+
+    return 0;
+}
+
