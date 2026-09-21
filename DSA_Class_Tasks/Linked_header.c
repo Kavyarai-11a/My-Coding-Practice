@@ -127,7 +127,7 @@ int InsertPos(List *l,int data,int Pos)
     {
         if(temp == NULL)
         {
-            return 2;
+            return -2;
         }
         temp = temp->link;
         if(temp->link == NULL)
