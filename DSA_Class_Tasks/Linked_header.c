@@ -341,3 +341,36 @@ int deleteList(List *l)
 
 }
 
+int ConcatList(List *l1,List *l2)
+{
+    if(l1 == NULL || l2 == NULL)
+    {
+        return -3;
+    }
+
+    if(l1->head == NULL && l1->tail == NULL)
+    {
+        l1->head = l2->head;
+        l1->tail = l2->tail;
+        l1->count = l2->count;
+        free(l2->head);
+        free(l2->tail);
+        l2->count = 0;
+        return 0;
+    }
+
+    if(l2->head == NULL && l2->tail == NULL)
+    {
+        return 0;
+    }
+
+    l1->tail->link = l2->head;
+    l1->tail = l2->tail;
+    l1->count += l2->count;
+    free(l2->head);
+    free(l2->tail);
+    l2->count = 0;
+
+    return 0;
+    
+}
