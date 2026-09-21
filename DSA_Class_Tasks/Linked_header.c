@@ -388,7 +388,20 @@ int reverse(List *l)
     }
 
     Node *prev = NULL;
-    Node *curr = *head;
+    Node *curr = l->head;
     Node *next;
+
+    while(curr != NULL)
+    {
+        next = curr->link;
+        curr->link = prev;
+        prev = curr;
+        curr = next;
+    }
+    
+    l->tail = l->head;
+    l->head = prev;
+
+    return 0;
 
 }
