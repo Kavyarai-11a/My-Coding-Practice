@@ -206,3 +206,50 @@ int deleteEnd(List *l)
     return 0;
 
 }
+
+int deletePos(List *l,int Pos)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->count == 0)
+    {
+        return -4;
+    }
+
+    if(Pos < 1 || Pos > l->count)
+    {
+        return -2;
+    }
+
+    if(Pos == 1)
+    {
+        return deleteFront(l);
+    }
+
+    if(Pos == l->count)
+    {
+        return deleteEnd(l);
+    }
+
+    else
+    {
+        Node *temp = l->head;
+        Node *prev = l->head;
+        for(int i=1;i<Pos-1;i++)
+        {
+            prev = temp;
+            temp = temp->link;
+        }
+
+        prev->link = temp->link;
+        free(temp);
+    }
+
+    l->count--;
+
+    return 0;
+
+}
