@@ -186,16 +186,22 @@ int deleteEnd(List *l)
     {
         l->tail = l->tail->link;
         l->head = NULL;
+        free(temp);
     }
 
-    while(temp->link->link != NULL)
+    else
     {
-        temp = temp->link;
+        while(temp->link->link != NULL)
+        {
+            temp = temp->link;
+        }
+
+        temp->link = NULL;
+        free(l->tail);
+        l->tail = temp;
     }
 
-    temp->link = NULL;
-    free(l->tail);
-    l->tail = temp;
+    l->count--;
 
     return 0;
 
