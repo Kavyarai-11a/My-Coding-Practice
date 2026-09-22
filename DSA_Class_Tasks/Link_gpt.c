@@ -595,7 +595,39 @@ int main()
 
         case 6:
 
-  
+              int result,pos;
+
+        printf("Enter position : ");
+        if(scanf("%d",&pos) != 1 || pos < 1 || pos > l->count)
+        {
+            printf("Invalid Position\n");
+        }
+        result = deleteEnd(l);
+
+        if(result == 0)
+        {
+            printf("Inserted Succesfully\n");
+        }
+
+        else if(result == -1)
+        {
+            printf("Memory allocation for new node fail\n");
+        }
+
+        else if(result == -4)
+        {
+            printf("List is empty\n");
+        }
+
+        else if(result == -3)
+        {
+            printf("Null Error\n");
+        }
+
+        else if(result == -2)
+        {
+            printf("Postion not found\n");
+        }
 
         break;
 
