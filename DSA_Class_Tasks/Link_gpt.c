@@ -100,3 +100,46 @@ int InsertEnd(List *l, int data)
     return 0;
 }
 
+int insertPos(List *l,int data,int Pos)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(Pos < 1 || Pos > l->count + 1)
+    {
+        return -2;
+    }
+
+    if(Pos == 1)
+    {
+        return insertFront(l,data);
+    }
+
+    if(Pos == l->count + 1)
+    {
+        return insertEnd(l,data);
+    }
+    
+    Node *newNode = malloc(sizeof(Node));
+    if(newNode == NULL)
+    {
+        return -1;
+    }
+
+    Node *temp = l->head;
+    for(int i=1;i<Pos-1;i++)
+    {
+        temp = temp->link;
+    }
+
+    newNode = temp->link;
+    temp->link = newNode;
+
+    l->count++;
+
+    return 0;
+
+}
+
