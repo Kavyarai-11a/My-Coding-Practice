@@ -442,14 +442,42 @@ int main()
     printf("10.Travers List\n");
     printf("11.Search Key\n");
     printf("12.Concate List\n");
-    printf("13.Exit\n");
 
     int c;
     printf("Enter your choice : ");
-    if(scanf("%d",&c) != 1 || c > 13 || c < 1)
+    if(scanf("%d",&c) != 1 || c > 12 || c < 1)
     {
         printf("Invalid Input\n");
     }
 
-    
+    List *l = createList();
+
+    switch(c)
+    {
+        case 1:
+        int data,result;
+        printf("Enter data to insert : ");
+        scanf("%d",&data);
+
+        result = InsertFront(l,data);
+        if(result == 0)
+        {
+            printf("Inserted Succesfully\n");
+        }
+
+        else if(result == -1)
+        {
+            printf("Memory allocation for new node fail\n");
+        }
+
+        else if(result == -3)
+        {
+            printf("Null Error\n");
+        }
+
+        break;
+
+        
+
+    }
 }
