@@ -723,7 +723,32 @@ int main()
 
         break;
 
-        case 10:
+        case 10: 
+
+        int result;
+
+        result = TransversList(l);
+
+        if(result == 0)
+        {
+            printf("Inserted Succesfully\n");
+        }
+
+        else if(result == -1)
+        {
+            printf("Memory allocation for new node fail\n");
+        }
+
+        else if(result == -3)
+        {
+            printf("Null Error\n");
+        }
+
+        else if(result == -4)
+        {
+            printf("List is empty\n");
+        }
+
         break;
 
         case 11:
