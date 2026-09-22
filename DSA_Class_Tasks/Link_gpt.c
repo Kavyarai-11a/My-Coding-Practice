@@ -122,7 +122,7 @@ int insertPos(List *l,int data,int Pos)
         return insertEnd(l,data);
     }
     
-    Node *newNode = malloc(sizeof(Node));
+    Node *newNode = createNode(data);
     if(newNode == NULL)
     {
         return -1;
@@ -134,7 +134,7 @@ int insertPos(List *l,int data,int Pos)
         temp = temp->link;
     }
 
-    newNode = temp->link;
+    newNode->link = temp->link;
     temp->link = newNode;
 
     l->count++;
@@ -143,3 +143,23 @@ int insertPos(List *l,int data,int Pos)
 
 }
 
+int deleteFront(List *l)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->count == 0)
+    {
+        return -4;
+    }
+
+    Node *temp = l->head;
+    l->head = l->head->link;
+    free(temp);
+    
+    l->count--;
+
+    return 0;
+}
