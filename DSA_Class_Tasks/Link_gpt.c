@@ -426,3 +426,30 @@ int concateList(List *l1,List *l2)
     l2->count = 0;
     return 0;
 }
+
+int main()
+{
+    printf("Choices\n");
+    printf("1.InsertFront\n");
+    printf("2.InsertEnd\n");
+    printf("3.InsertPos\n");
+    printf("4.DeleteFront\n");
+    printf("5.DeleteEnd\n");
+    printf("6.DeletePos\n");
+    printf("7.DeleteKey\n");
+    printf("8.DeleteList\n");
+    printf("9.Reverse List\n");
+    printf("10.Travers List\n");
+    printf("11.Search Key\n");
+    printf("12.Concate List\n");
+    printf("13.Exit\n");
+
+    int c;
+    printf("Enter your choice : ");
+    if(scanf("%d",&c) != 1 || c > 13 || c < 1)
+    {
+        printf("Invalid Input\n");
+    }
+
+    
+}
