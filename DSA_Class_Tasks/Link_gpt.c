@@ -547,12 +547,7 @@ int main()
 
         if(result == 0)
         {
-            printf("Inserted Succesfully\n");
-        }
-
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
+            printf("Delete Succesfully\n");
         }
 
         else if(result == -4)
@@ -574,12 +569,7 @@ int main()
 
         if(result == 0)
         {
-            printf("Inserted Succesfully\n");
-        }
-
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
+            printf("Delete Succesfully\n");
         }
 
         else if(result == -4)
@@ -603,16 +593,11 @@ int main()
         {
             printf("Invalid Position\n");
         }
-        result = deleteEnd(l);
+        result = deletePos(l,pos);
 
         if(result == 0)
         {
-            printf("Inserted Succesfully\n");
-        }
-
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
+            printf("Delete Succesfully\n");
         }
 
         else if(result == -4)
@@ -642,12 +627,7 @@ int main()
 
         if(result == 0)
         {
-            printf("Inserted Succesfully\n");
-        }
-
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
+            printf("Delete Succesfully\n");
         }
 
         else if(result == -3)
@@ -675,12 +655,7 @@ int main()
 
         if(result == 0)
         {
-            printf("Inserted Succesfully\n");
-        }
-
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
+            printf("Delete Succesfully\n");
         }
 
         else if(result == -3)
@@ -703,12 +678,7 @@ int main()
 
         if(result == 0)
         {
-            printf("Inserted Succesfully\n");
-        }
-
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
+            printf("Reversed Succesfully\n");
         }
 
         else if(result == -3)
@@ -731,12 +701,7 @@ int main()
 
         if(result == 0)
         {
-            printf("Inserted Succesfully\n");
-        }
-
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
+            printf("Transvered Succesfully\n");
         }
 
         else if(result == -3)
@@ -753,20 +718,36 @@ int main()
 
         case 11:
 
-        int data,result;
+        int data;
+        Node *result;
         printf("Enter data to insert : ");
         scanf("%d",&data);
         
         result = SearchList(l,data);
 
-        if(result == 0)
+        if(result == NULL)
         {
-            printf("Inserted Succesfully\n");
+            printf("Search Failed\n");
         }
 
-        else if(result == -1)
+        else
         {
-            printf("Memory allocation for new node fail\n");
+            printf("Search Successful\n");
+        }
+
+        break;
+
+        case 12:
+
+        int result;
+        List *l1 = createList();
+        List *l2 = createList();
+
+        result = concateList(l1,l2);
+
+        if(result == 0)
+        {
+            printf("Concated Succesfully\n");
         }
 
         else if(result == -3)
@@ -774,19 +755,6 @@ int main()
             printf("Null Error\n");
         }
 
-        else if(result == -4)
-        {
-            printf("List is empty\n");
-        }
-
-        else if(result == -5)
-        {
-            printf("Data not found");
-        }
-
-        break;
-
-        case 12:
         break;
 
     }
