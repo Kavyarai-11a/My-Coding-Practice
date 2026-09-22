@@ -157,9 +157,14 @@ int deleteFront(List *l)
 
     Node *temp = l->head;
     l->head = l->head->link;
+
+    if(l->head == NULL)
+        l->tail = NULL;
+
     free(temp);
     
     l->count--;
 
     return 0;
 }
+
