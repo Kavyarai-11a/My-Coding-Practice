@@ -291,3 +291,28 @@ int deleteKey(List *l,int key)
 
     return -5;
 }
+
+int deleteList(List *l)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->count == 0)
+    {
+        return -4;
+    }
+
+    Node *temp = l->head;
+    while(temp != NULL)
+    {
+        temp = l->head;
+        l->head = l->head->link;
+        free(temp);
+    }
+
+    l->tail = NULL;
+    l->count = 0;
+    return 0;
+}
