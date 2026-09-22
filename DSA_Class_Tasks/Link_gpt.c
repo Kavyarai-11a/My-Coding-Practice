@@ -540,7 +540,82 @@ int main()
 
         break;
 
-        
+        case 4:
+        int result;
+        result = deleteFront(l);
+
+        if(result == 0)
+        {
+            printf("Inserted Succesfully\n");
+        }
+
+        else if(result == -1)
+        {
+            printf("Memory allocation for new node fail\n");
+        }
+
+        else if(result == -4)
+        {
+            printf("List is empty\n");
+        }
+
+        else if(result == -3)
+        {
+            printf("Null Error\n");
+        }
+
+        break;
+
+        case 5:
+
+        int result;
+        result = deleteEnd(l);
+
+        if(result == 0)
+        {
+            printf("Inserted Succesfully\n");
+        }
+
+        else if(result == -1)
+        {
+            printf("Memory allocation for new node fail\n");
+        }
+
+        else if(result == -4)
+        {
+            printf("List is empty\n");
+        }
+
+        else if(result == -3)
+        {
+            printf("Null Error\n");
+        }
+
+        break;
+
+        case 6:
+
+  
+
+        break;
+
+        case 7:
+        break;
+
+        case 8:
+        break;
+
+        case 9:
+        break;
+
+        case 10:
+        break;
+
+        case 11:
+        break;
+
+        case 12:
+        break;
 
     }
 }
