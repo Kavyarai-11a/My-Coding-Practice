@@ -478,6 +478,7 @@ int main()
         break;
 
         case 2:
+
         int data,result;
         printf("Enter data to insert : ");
         scanf("%d",&data);
@@ -632,6 +633,33 @@ int main()
         break;
 
         case 7:
+
+        int data,result;
+        printf("Enter data to insert : ");
+        scanf("%d",&data);
+        
+        result = deleteKey(l,data);
+
+        if(result == 0)
+        {
+            printf("Inserted Succesfully\n");
+        }
+
+        else if(result == -1)
+        {
+            printf("Memory allocation for new node fail\n");
+        }
+
+        else if(result == -3)
+        {
+            printf("Null Error\n");
+        }
+
+        else if(result == -5)
+        {
+            printf("Data not found");
+        }
+
         break;
 
         case 8:
