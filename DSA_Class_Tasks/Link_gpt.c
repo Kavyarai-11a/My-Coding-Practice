@@ -316,3 +316,31 @@ int deleteList(List *l)
     l->count = 0;
     return 0;
 }
+
+int ReverseList(List *l)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->count == 0)
+    {
+        return -4;
+    }
+
+    Node *prev = NULL;
+    Node *curr = l->head;
+    Node *next = curr->link;
+
+    while(curr != NULL)
+    {
+        next = curr->link;
+        curr->link = prev;
+        prev = curr;
+        curr = next;
+    }
+    l->tail = l->head;
+    l->head = prev;
+    return 0;
+}
