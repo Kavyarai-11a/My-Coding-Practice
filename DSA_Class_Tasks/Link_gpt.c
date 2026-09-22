@@ -253,3 +253,41 @@ int deletePos(List *l,int Pos)
     return 0;
 
 }
+
+int deleteKey(List *l,int key)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->count == NULL)
+    {
+        return -4;
+    }
+
+    int count = 1;
+    Node *temp = l->head;
+    while(temp != NULL)
+    {
+        if(temp->data == key && temp == l->head)
+        {
+            return deleteFront(l);
+        }
+
+        else if(temp->data == key && temp == l->tail)
+        {
+            return deleteEnd(l);
+        }
+
+        else if(temp->data == key)
+        {
+            return deletePos(l,count);
+        }
+
+        temp = temp->link;
+        count++;
+    }
+
+    return -1;
+}
