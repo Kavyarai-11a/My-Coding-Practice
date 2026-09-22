@@ -501,6 +501,45 @@ int main()
         
         break;
 
+        case 3:
+        int data,pos,result;
+
+        printf("Enter data to insert : ");
+        if(scanf("%d",&data) != 1)
+        {
+            printf("scanf fail\n");
+        }
+
+        printf("Enter position to insert : ");
+        if(scanf("%d",&pos) != 1 || pos < 1 || pos > l->count + 1)
+        {
+            printf("Invalid position\n");
+        }
+
+        result = InsertPos(l,data,pos);
+
+        if(result == 0)
+        {
+            printf("Inserted Succesfully\n");
+        }
+
+        else if(result == -1)
+        {
+            printf("Memory allocation for new node fail\n");
+        }
+
+        else if(result == -3)
+        {
+            printf("Null Error\n");
+        }
+
+        else if(result == -2)
+        {
+            printf("Position not found\n");
+        }
+
+        break;
+
         
 
     }
