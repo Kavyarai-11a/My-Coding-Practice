@@ -31,7 +31,7 @@ Node *createNode(int data)
 List *createList(void)
 {
     List *newList = malloc(sizeof(List));
-    if(l == NULL)
+    if(newList == NULL)
     {
         return -3;
     }
