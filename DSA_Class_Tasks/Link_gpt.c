@@ -364,7 +364,65 @@ int TransversList(List *l)
         temp = temp->link;
     }
     printf("NULL");
-    
+
     return 0;
 
+}
+
+Node *SearchList(List *l,int key)
+{
+    if(l == NULL)
+    {
+        return NULL;
+    }
+
+    if(l->count  == 0)
+    {
+        return NULL;
+    }
+
+    Node *temp = l->head;
+    while(temp != NULL)
+    {
+        if(temp->data == key)
+        {
+            return temp;
+        }
+        temp = temp->link;
+    }
+    
+    return NULL;
+
+}
+
+int concateList(List *l1,List *l2)
+{
+    if(l1 == NULL || l2 == NULL)
+    {
+        return -3;
+    }
+
+    if(l1->count == 0)
+    {
+        l1->head = l2->head;
+        l1->tail = l2->tail;
+        l1->count = l2->count;
+    }
+
+    else if(l2->count == 0)
+    {
+        return 0;
+    }
+
+    else
+    {
+        l1->tail->link = l2->head;
+        l1->tail = l2->tail;
+        l1->count += l2->count;
+    }
+    
+    l2->head = NULL;
+    l2->tail = NULL;
+    l2->count = 0;
+    return 0;
 }
