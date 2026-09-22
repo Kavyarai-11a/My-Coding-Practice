@@ -168,3 +168,35 @@ int deleteFront(List *l)
     return 0;
 }
 
+int deleteEnd(List *l)
+{
+    if(l == NULL)
+    {
+        return -3;
+    }
+
+    if(l->count == 0)
+    {
+        return -4;
+    }
+
+    Node *temp = l->head;
+    
+    if(l->count == 1)
+    {
+        l->tail = l->tail->link;
+        l->head = NULL;
+    }
+
+    while(temp->link->link != NULL)
+    {
+        temp = temp->link;
+    }
+
+    temp->link = NULL;
+    free(l->tail);
+    l->tail = temp;
+
+    return 0;
+
+}
