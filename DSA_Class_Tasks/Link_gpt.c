@@ -261,7 +261,7 @@ int deleteKey(List *l,int key)
         return -3;
     }
 
-    if(l->count == NULL)
+    if(l->count == 0)
     {
         return -4;
     }
@@ -289,5 +289,5 @@ int deleteKey(List *l,int key)
         count++;
     }
 
-    return -1;
+    return -5;
 }
