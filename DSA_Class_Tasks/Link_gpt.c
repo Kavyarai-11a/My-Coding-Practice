@@ -427,6 +427,39 @@ int concateList(List *l1,List *l2)
     return 0;
 }
 
+void printResult(int result)
+{
+    switch(result)
+    {
+        case 0:
+            printf("Operation successful\n");
+            break;
+
+        case -1:
+            printf("Memory allocation failed\n");
+            break;
+
+        case -2:
+            printf("Invalid position\n");
+            break;
+
+        case -3:
+            printf("Null list\n");
+            break;
+
+        case -4:
+            printf("List is empty\n");
+            break;
+
+        case -5:
+            printf("Data not found\n");
+            break;
+
+        default:
+            printf("Unknown error\n");
+    }
+}
+
 int main()
 {
     printf("Choices\n");
