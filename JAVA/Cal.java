@@ -1,4 +1,4 @@
-package mypack;
+package Stud;
 
 public class Cal {
 	public int add(int a,int b)
