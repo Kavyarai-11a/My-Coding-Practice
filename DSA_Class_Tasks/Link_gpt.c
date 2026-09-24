@@ -448,6 +448,7 @@ int main()
     if(scanf("%d",&c) != 1)
     {
         printf("Invalid Input\n");
+        return 0;
     }
 
     List *l = createList();
@@ -515,12 +516,14 @@ int main()
             if(scanf("%d",&data) != 1)
             {
                 printf("scanf fail\n");
+                break;
             }
 
             printf("Enter position to insert : ");
-            if(scanf("%d",&pos) != 1 || pos < 1 || pos > l->count + 1)
+            if(scanf("%d",&pos) != 1)
             {
-                printf("Invalid position\n");
+                printf("scanf fail\n");
+                break;
             }
 
             result = InsertPos(l,data,pos);
