@@ -557,9 +557,10 @@ int main()
             int result,pos;
 
             printf("Enter position : ");
-            if(scanf("%d",&pos) != 1 || pos < 1 || pos > l->count)
+            if(scanf("%d",&pos) != 1)
             {
-                printf("Invalid Position\n");
+                printf("scanf fail\n");
+                break;
             }
             result = deletePos(l,pos);
             printResult(result);
@@ -570,9 +571,6 @@ int main()
         {
 
             int data,result;
-            printf("Enter data to insert : ");
-            scanf("%d",&data);
-            
             result = deleteKey(l,data);
             printResult(result);
             break;
