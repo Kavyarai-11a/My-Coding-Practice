@@ -445,7 +445,7 @@ int main()
 
     int c;
     printf("Enter your choice : ");
-    if(scanf("%d",&c) != 1 || c > 12 || c < 1)
+    if(scanf("%d",&c) != 1)
     {
         printf("Invalid Input\n");
     }
@@ -776,6 +776,8 @@ int main()
 
             break;
         }
+    default:
+        printf("Invalid choice\n");
 
     }
 }
