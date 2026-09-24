@@ -495,21 +495,7 @@ int main()
             scanf("%d",&data);
 
             result = InsertFront(l,data);
-            if(result == 0)
-            {
-                printf("Inserted Succesfully\n");
-            }
-
-            else if(result == -1)
-            {
-                printf("Memory allocation for new node fail\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -521,22 +507,7 @@ int main()
             scanf("%d",&data);
             
             result = InsertEnd(l,data);
-
-            if(result == 0)
-            {
-                printf("Inserted Succesfully\n");
-            }
-
-            else if(result == -1)
-            {
-                printf("Memory allocation for new node fail\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-            
+            printResult(result);
             break;
         }
 
@@ -560,27 +531,7 @@ int main()
             }
 
             result = InsertPos(l,data,pos);
-
-            if(result == 0)
-            {
-                printf("Inserted Succesfully\n");
-            }
-
-            else if(result == -1)
-            {
-                printf("Memory allocation for new node fail\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
-            else if(result == -2)
-            {
-                printf("Position not found\n");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -588,22 +539,7 @@ int main()
         {
             int result;
             result = deleteFront(l);
-
-            if(result == 0)
-            {
-                printf("Delete Succesfully\n");
-            }
-
-            else if(result == -4)
-            {
-                printf("List is empty\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -611,22 +547,7 @@ int main()
         {
             int result;
             result = deleteEnd(l);
-
-            if(result == 0)
-            {
-                printf("Delete Succesfully\n");
-            }
-
-            else if(result == -4)
-            {
-                printf("List is empty\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -641,27 +562,7 @@ int main()
                 printf("Invalid Position\n");
             }
             result = deletePos(l,pos);
-
-            if(result == 0)
-            {
-                printf("Delete Succesfully\n");
-            }
-
-            else if(result == -4)
-            {
-                printf("List is empty\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
-            else if(result == -2)
-            {
-                printf("Postion not found\n");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -673,27 +574,7 @@ int main()
             scanf("%d",&data);
             
             result = deleteKey(l,data);
-
-            if(result == 0)
-            {
-                printf("Delete Succesfully\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
-            else if(result == -4)
-            {
-                printf("List is empty\n");
-            }
-
-            else if(result == -5)
-            {
-                printf("Data not found");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -703,22 +584,7 @@ int main()
             int result;
 
             result = deleteList(l);
-
-            if(result == 0)
-            {
-                printf("Delete Succesfully\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
-            else if(result == -4)
-            {
-                printf("List is empty\n");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -727,22 +593,7 @@ int main()
             int result;
 
             result = ReverseList(l);
-
-            if(result == 0)
-            {
-                printf("Reversed Succesfully\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
-            else if(result == -4)
-            {
-                printf("List is empty\n");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -751,22 +602,7 @@ int main()
             int result;
 
             result = TransversList(l);
-
-            if(result == 0)
-            {
-                printf("Transvered Succesfully\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
-            else if(result == -4)
-            {
-                printf("List is empty\n");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -778,17 +614,7 @@ int main()
             scanf("%d",&data);
             
             result = SearchList(l,data);
-
-            if(result == NULL)
-            {
-                printf("Search Failed\n");
-            }
-
-            else
-            {
-                printf("Search Successful\n");
-            }
-
+            printResult(result);
             break;
         }
 
@@ -799,17 +625,7 @@ int main()
             List *l2 = createList();
 
             result = concateList(l1,l2);
-
-            if(result == 0)
-            {
-                printf("Concated Succesfully\n");
-            }
-
-            else if(result == -3)
-            {
-                printf("Null Error\n");
-            }
-
+            printResult(result);
             break;
         }
     default:
