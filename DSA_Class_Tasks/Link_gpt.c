@@ -455,307 +455,327 @@ int main()
     switch(c)
     {
         case 1:
-        int data,result;
-        printf("Enter data to insert : ");
-        scanf("%d",&data);
-
-        result = InsertFront(l,data);
-        if(result == 0)
         {
-            printf("Inserted Succesfully\n");
-        }
+            int data,result;
+            printf("Enter data to insert : ");
+            scanf("%d",&data);
 
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
-        }
+            result = InsertFront(l,data);
+            if(result == 0)
+            {
+                printf("Inserted Succesfully\n");
+            }
 
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
+            else if(result == -1)
+            {
+                printf("Memory allocation for new node fail\n");
+            }
 
-        break;
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+
+            break;
+        }
 
         case 2:
-
-        int data,result;
-        printf("Enter data to insert : ");
-        scanf("%d",&data);
-        
-        result = InsertEnd(l,data);
-
-        if(result == 0)
         {
-            printf("Inserted Succesfully\n");
+            
+            int data,result;
+            printf("Enter data to insert : ");
+            scanf("%d",&data);
+            
+            result = InsertEnd(l,data);
+
+            if(result == 0)
+            {
+                printf("Inserted Succesfully\n");
+            }
+
+            else if(result == -1)
+            {
+                printf("Memory allocation for new node fail\n");
+            }
+
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+            
+            break;
         }
 
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
-        }
-
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
-        
-        break;
 
         case 3:
-        int data,pos,result;
-
-        printf("Enter data to insert : ");
-        if(scanf("%d",&data) != 1)
         {
-            printf("scanf fail\n");
+            int data,pos,result;
+
+            printf("Enter data to insert : ");
+            if(scanf("%d",&data) != 1)
+            {
+                printf("scanf fail\n");
+            }
+
+            printf("Enter position to insert : ");
+            if(scanf("%d",&pos) != 1 || pos < 1 || pos > l->count + 1)
+            {
+                printf("Invalid position\n");
+            }
+
+            result = InsertPos(l,data,pos);
+
+            if(result == 0)
+            {
+                printf("Inserted Succesfully\n");
+            }
+
+            else if(result == -1)
+            {
+                printf("Memory allocation for new node fail\n");
+            }
+
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+
+            else if(result == -2)
+            {
+                printf("Position not found\n");
+            }
+
+            break;
         }
-
-        printf("Enter position to insert : ");
-        if(scanf("%d",&pos) != 1 || pos < 1 || pos > l->count + 1)
-        {
-            printf("Invalid position\n");
-        }
-
-        result = InsertPos(l,data,pos);
-
-        if(result == 0)
-        {
-            printf("Inserted Succesfully\n");
-        }
-
-        else if(result == -1)
-        {
-            printf("Memory allocation for new node fail\n");
-        }
-
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
-
-        else if(result == -2)
-        {
-            printf("Position not found\n");
-        }
-
-        break;
 
         case 4:
-        int result;
-        result = deleteFront(l);
-
-        if(result == 0)
         {
-            printf("Delete Succesfully\n");
-        }
+            int result;
+            result = deleteFront(l);
 
-        else if(result == -4)
-        {
-            printf("List is empty\n");
-        }
+            if(result == 0)
+            {
+                printf("Delete Succesfully\n");
+            }
 
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
+            else if(result == -4)
+            {
+                printf("List is empty\n");
+            }
 
-        break;
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+
+            break;
+        }
 
         case 5:
-
-        int result;
-        result = deleteEnd(l);
-
-        if(result == 0)
         {
-            printf("Delete Succesfully\n");
-        }
+            int result;
+            result = deleteEnd(l);
 
-        else if(result == -4)
-        {
-            printf("List is empty\n");
-        }
+            if(result == 0)
+            {
+                printf("Delete Succesfully\n");
+            }
 
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
+            else if(result == -4)
+            {
+                printf("List is empty\n");
+            }
 
-        break;
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+
+            break;
+        }
 
         case 6:
-
-              int result,pos;
-
-        printf("Enter position : ");
-        if(scanf("%d",&pos) != 1 || pos < 1 || pos > l->count)
         {
-            printf("Invalid Position\n");
-        }
-        result = deletePos(l,pos);
 
-        if(result == 0)
-        {
-            printf("Delete Succesfully\n");
-        }
+            int result,pos;
 
-        else if(result == -4)
-        {
-            printf("List is empty\n");
-        }
+            printf("Enter position : ");
+            if(scanf("%d",&pos) != 1 || pos < 1 || pos > l->count)
+            {
+                printf("Invalid Position\n");
+            }
+            result = deletePos(l,pos);
 
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
+            if(result == 0)
+            {
+                printf("Delete Succesfully\n");
+            }
 
-        else if(result == -2)
-        {
-            printf("Postion not found\n");
-        }
+            else if(result == -4)
+            {
+                printf("List is empty\n");
+            }
 
-        break;
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+
+            else if(result == -2)
+            {
+                printf("Postion not found\n");
+            }
+
+            break;
+        }
 
         case 7:
-
-        int data,result;
-        printf("Enter data to insert : ");
-        scanf("%d",&data);
-        
-        result = deleteKey(l,data);
-
-        if(result == 0)
         {
-            printf("Delete Succesfully\n");
-        }
 
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
+            int data,result;
+            printf("Enter data to insert : ");
+            scanf("%d",&data);
+            
+            result = deleteKey(l,data);
 
-        else if(result == -4)
-        {
-            printf("List is empty\n");
-        }
+            if(result == 0)
+            {
+                printf("Delete Succesfully\n");
+            }
 
-        else if(result == -5)
-        {
-            printf("Data not found");
-        }
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
 
-        break;
+            else if(result == -4)
+            {
+                printf("List is empty\n");
+            }
+
+            else if(result == -5)
+            {
+                printf("Data not found");
+            }
+
+            break;
+        }
 
         case 8:
-
-        int result;
-
-        result = deleteList(l);
-
-        if(result == 0)
         {
-            printf("Delete Succesfully\n");
-        }
 
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
+            int result;
 
-        else if(result == -4)
-        {
-            printf("List is empty\n");
-        }
+            result = deleteList(l);
 
-        break;
+            if(result == 0)
+            {
+                printf("Delete Succesfully\n");
+            }
+
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+
+            else if(result == -4)
+            {
+                printf("List is empty\n");
+            }
+
+            break;
+        }
 
         case 9:
-
-        int result;
-
-        result = ReverseList(l);
-
-        if(result == 0)
         {
-            printf("Reversed Succesfully\n");
-        }
+            int result;
 
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
+            result = ReverseList(l);
 
-        else if(result == -4)
-        {
-            printf("List is empty\n");
-        }
+            if(result == 0)
+            {
+                printf("Reversed Succesfully\n");
+            }
 
-        break;
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+
+            else if(result == -4)
+            {
+                printf("List is empty\n");
+            }
+
+            break;
+        }
 
         case 10: 
-
-        int result;
-
-        result = TransversList(l);
-
-        if(result == 0)
         {
-            printf("Transvered Succesfully\n");
-        }
+            int result;
 
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
+            result = TransversList(l);
 
-        else if(result == -4)
-        {
-            printf("List is empty\n");
-        }
+            if(result == 0)
+            {
+                printf("Transvered Succesfully\n");
+            }
 
-        break;
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+
+            else if(result == -4)
+            {
+                printf("List is empty\n");
+            }
+
+            break;
+        }
 
         case 11:
-
-        int data;
-        Node *result;
-        printf("Enter data to insert : ");
-        scanf("%d",&data);
-        
-        result = SearchList(l,data);
-
-        if(result == NULL)
         {
-            printf("Search Failed\n");
-        }
+            int data;
+            Node *result;
+            printf("Enter data to insert : ");
+            scanf("%d",&data);
+            
+            result = SearchList(l,data);
 
-        else
-        {
-            printf("Search Successful\n");
-        }
+            if(result == NULL)
+            {
+                printf("Search Failed\n");
+            }
 
-        break;
+            else
+            {
+                printf("Search Successful\n");
+            }
+
+            break;
+        }
 
         case 12:
-
-        int result;
-        List *l1 = createList();
-        List *l2 = createList();
-
-        result = concateList(l1,l2);
-
-        if(result == 0)
         {
-            printf("Concated Succesfully\n");
-        }
+            int result;
+            List *l1 = createList();
+            List *l2 = createList();
 
-        else if(result == -3)
-        {
-            printf("Null Error\n");
-        }
+            result = concateList(l1,l2);
 
-        break;
+            if(result == 0)
+            {
+                printf("Concated Succesfully\n");
+            }
+
+            else if(result == -3)
+            {
+                printf("Null Error\n");
+            }
+
+            break;
+        }
 
     }
 }
