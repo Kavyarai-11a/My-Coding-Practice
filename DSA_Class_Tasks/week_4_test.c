@@ -91,5 +91,9 @@ int main()
     printf("%s\n",r2->pub.name);
     printf("%d\n",r2->pub.year);
 
-    
+    free(b);
+    free(r1);
+    free(r2);
+
+    return 0;
 }
