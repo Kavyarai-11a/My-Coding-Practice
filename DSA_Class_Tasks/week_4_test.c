@@ -65,7 +65,7 @@ int main()
         printf("Invalid Input\n");
         return 0;
     }
-
+    //printf("Hello\n");
     Book *b;
     b = malloc(n * sizeof(Book));
     if(b == NULL)
@@ -74,14 +74,15 @@ int main()
         return 0;
     }
 
+    printf("Enter details of %d books\n",n);
     for(int i=0;i<n;i++)
     {
 
-        scanf("%d\n",&(b + i)->id);
-        scanf("%s\n",&(b + i)->title);
-        scanf("%.2f\n",&(b + i)->price);
-        scanf("%s\n",&(b + i)->pub.name);
-        scanf("%d\n",&(b + i)->pub.year);
+        scanf("%d",&((b + i)->id));
+        scanf("%s",((b + i)->title));
+        scanf("%f",&((b + i)->price));
+        scanf("%s",((b + i)->pub.name));
+        scanf("%d",&((b + i)->pub.year));
 
     }
 
@@ -103,8 +104,6 @@ int main()
     printf("%d\n",r2->pub.year);
 
     free(b);
-    free(r1);
-    free(r2);
 
     return 0;
 }
