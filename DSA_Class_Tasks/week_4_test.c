@@ -1,5 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef struct {
     char name[20];
     int year;
@@ -9,101 +10,96 @@ typedef struct {
     int id;
     char title[30];
     float price;
-    Publisher pub;
+    Publisher pub;   // nested structure
 } Book;
 
-void printAllBooks(Book *b,int n)
-{
+// Function to print details of all books
+void printAllBooks(Book *books, int n) {
+    // write logic here
     for(int i=0;i<n;i++)
     {
-
-        printf("%d\n",(b + i)->id);
-        printf("%s\n",(b + i)->title);
-        printf("%.2f\n",(b + i)->price);
-        printf("%s\n",(b + i)->pub.name);
-        printf("%d\n",(b + i)->pub.year);
-
+        printf("%d\n",(books + i)->id);
+        printf("%s\n",(books + i)->title);
+        printf("%.2f\n",(books + i)->price);
+        printf("%s\n",(books + i)->pub.name);
+        printf("%d\n",(books + i)->pub.year);
     }
-} 
+}
 
-Book *findMaxBook(Book *b,int n)
-{
-    int temp = 0;
+// Function to find the book with maximum price
+Book* findMaxBook(Book *books, int n) {
+    // write logic here
+    int temp;
     for(int i=0;i<n;i++)
     {
-        if((b + i)->price > (b + temp)->price)
+        if((books + i)->price > (books + temp)->price)
         {
             temp = i;
         }
     }
 
-    return (b + temp);
-
+    return (books + temp);
 }
 
-Book *findMinBook(Book *b,int n)
-{
-    int temp = 0;
+// Function to find the book with minimum price
+Book* findMinBook(Book *books, int n) {
+    // write logic here
+    int temp;
     for(int i=0;i<n;i++)
     {
-        if((b + i)->price < (b + temp)->price)
+        if((books + i)->price < (books + temp)->price)
         {
             temp = i;
         }
     }
 
-    return (b + temp);
-    
+    return (books + temp);
 }
 
-int main()
-{
-    int n;
-    printf("Enter num of book's details to store\n");
-    if(scanf("%d",&n) != 1 || n < 1)
+int main() {
+    int n, i;
+
+    printf("Enter number of books: ");
+    scanf("%d", &n);
+
+    // write logic here
+    Book *books = (Book *)malloc(n * sizeof(Book));
+    if(books == NULL)
     {
-        printf("Invalid Input\n");
-        return 0;
-    }
-    //printf("Hello\n");
-    Book *b;
-    b = malloc(n * sizeof(Book));
-    if(b == NULL)
-    {
-        printf("Memory not allocated\n");
         return 0;
     }
 
-    printf("Enter details of %d books\n",n);
-    for(int i=0;i<n;i++)
-    {
+    for (i = 0; i < n; i++) {
+        printf("\nEnter details for book %d:\n", i + 1);
+        scanf("%d",&(books + i)->id);
+        scanf("%29s",(books + i)->title);
+        scanf("%f",&(books + i)->price);
+        scanf("%19s",(books + i)->pub.name);
+        scanf("%d",&(books + i)->pub.year);
 
-        scanf("%d",&((b + i)->id));
-        scanf("%s",((b + i)->title));
-        scanf("%f",&((b + i)->price));
-        scanf("%s",((b + i)->pub.name));
-        scanf("%d",&((b + i)->pub.year));
-
+        // write logic here
     }
 
-    printAllBooks(b,n);
-    Book *r1 = findMaxBook(b,n);
-    printf("Most expensive books details\n");
-    printf("%d\n",r1->id);
-    printf("%s\n",r1->title);
-    printf("%.2f\n",r1->price);
-    printf("%s\n",r1->pub.name);
-    printf("%d\n",r1->pub.year);
+    printAllBooks(books,n);
 
-    Book *r2 = findMinBook(b,n);
-    printf("Cheapest books details\n");
-    printf("%d\n",r2->id);
-    printf("%s\n",r2->title);
-    printf("%.2f\n",r2->price);
-    printf("%s\n",r2->pub.name);
-    printf("%d\n",r2->pub.year);
+    Book * i1 = findMaxBook(books,n);
+    Book * i2 = findMinBook(books,n);
 
-    free(b);
+    printf("%d\n",i1->id);
+    printf("%s\n",i1->title);
+    printf("%.2f\n",i1->price);
+    printf("%s\n",i1->pub.name);
+    printf("%d\n",i1->pub.year);
 
+    printf("%d\n",i2->id);
+    printf("%s\n",i2->title);
+    printf("%.2f\n",i2->price);
+    printf("%s\n",i2->pub.name);
+    printf("%d\n",i2->pub.year);
+
+
+
+    // write logic here
+    free(books);
     return 0;
 }
