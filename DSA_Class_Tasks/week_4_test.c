@@ -55,3 +55,41 @@ Book *findMinBook(Book *b,int n)
     return (b + temp);
     
 }
+
+int main()
+{
+    int n;
+    printf("Enter num of book's details to store\n");
+    if(scanf("%d",&n) != 1 || n < 1)
+    {
+        printf("Invalid Input\n");
+        return 0;
+    }
+
+    Book *b;
+    b = malloc(n * sizeof(Book));
+    if(b == NULL)
+    {
+        printf("Memory not allocated\n");
+        return 0;
+    }
+
+    printAllBooks(b,n);
+    Book *r1 = findMaxBook(b,n);
+    printf("Most expensive books details\n");
+    printf("%d\n",r1->id);
+    printf("%s\n",r1->title);
+    printf("%.2f\n",r1->price);
+    printf("%s\n",r1->pub.name);
+    printf("%d\n",r1->pub.year);
+
+    Book *r2 = findMinBook(b,n);
+    printf("Cheapest books details\n");
+    printf("%d\n",r2->id);
+    printf("%s\n",r2->title);
+    printf("%.2f\n",r2->price);
+    printf("%s\n",r2->pub.name);
+    printf("%d\n",r2->pub.year);
+
+    
+}
