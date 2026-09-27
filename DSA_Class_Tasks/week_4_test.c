@@ -74,6 +74,17 @@ int main()
         return 0;
     }
 
+    for(int i=0;i<n;i++)
+    {
+
+        scanf("%d\n",&(b + i)->id);
+        scanf("%s\n",&(b + i)->title);
+        scanf("%.2f\n",&(b + i)->price);
+        scanf("%s\n",&(b + i)->pub.name);
+        scanf("%d\n",&(b + i)->pub.year);
+
+    }
+
     printAllBooks(b,n);
     Book *r1 = findMaxBook(b,n);
     printf("Most expensive books details\n");
