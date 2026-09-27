@@ -29,7 +29,7 @@ void printAllBooks(Book *books, int n) {
 // Function to find the book with maximum price
 Book* findMaxBook(Book *books, int n) {
     // write logic here
-    int temp;
+    int temp = 0;
     for(int i=0;i<n;i++)
     {
         if((books + i)->price > (books + temp)->price)
@@ -44,7 +44,7 @@ Book* findMaxBook(Book *books, int n) {
 // Function to find the book with minimum price
 Book* findMinBook(Book *books, int n) {
     // write logic here
-    int temp;
+    int temp = 0;
     for(int i=0;i<n;i++)
     {
         if((books + i)->price < (books + temp)->price)
