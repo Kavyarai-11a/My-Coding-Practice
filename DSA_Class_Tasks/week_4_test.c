@@ -38,5 +38,20 @@ Book *findMaxBook(Book *b,int n)
     }
 
     return (b + temp);
+
+}
+
+Book *findMinBook(Book *b,int n)
+{
+    int temp = 0;
+    for(int i=0;i<n;i++)
+    {
+        if((b + i)->price < (b + temp)->price)
+        {
+            temp = i;
+        }
+    }
+
+    return (b + temp);
     
 }
