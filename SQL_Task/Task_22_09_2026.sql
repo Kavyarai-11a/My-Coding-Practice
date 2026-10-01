@@ -480,3 +480,22 @@ FROM WORKS_ON
 WHERE HOURS > 10
 ORDER BY essn ASC;
 
+-- Q7. Salary statistics for employees in department 5
+SELECT
+    COUNT(*) AS total_employees,
+    SUM(SALARY) AS total_salary,
+    ROUND(AVG(SALARY), 2) AS avg_salary,
+    MAX(SALARY) AS highest_salary,
+    MIN(SALARY) AS lowest_salary
+FROM EMPLOYEE
+WHERE DNO = 5;
+
+-- Q8. Employee count and average salary by department
+SELECT
+    DNO,
+    COUNT(*) AS num_employees,
+    ROUND(AVG(SALARY), 2) AS avg_salary
+FROM EMPLOYEE
+GROUP BY DNO
+ORDER BY num_employees DESC, DNO ASC;
+
