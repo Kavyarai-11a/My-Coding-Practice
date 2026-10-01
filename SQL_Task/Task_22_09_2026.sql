@@ -422,3 +422,14 @@ ORDER BY
     Department_Name ASC, 
     Credit_Hours DESC, 
     Course_Name ASC;
+
+
+-- Assessment 5: University database
+USE university;
+
+-- Q1. Departments with at least one student over 50 total credits
+SELECT DISTINCT dept_name
+FROM student
+WHERE tot_cred > 50
+ORDER BY dept_name ASC;
+
