@@ -433,3 +433,12 @@ FROM student
 WHERE tot_cred > 50
 ORDER BY dept_name ASC;
 
+-- Q2. Instructor salary statistics for Comp. Sci. and Physics
+SELECT
+    COUNT(*) AS total_instructors,
+    ROUND(AVG(salary), 2) AS avg_salary,
+    MAX(salary) AS highest_salary,
+    MIN(salary) AS lowest_salary
+FROM instructor
+WHERE dept_name IN ('Comp. Sci.', 'Physics');
+
