@@ -499,3 +499,13 @@ FROM EMPLOYEE
 GROUP BY DNO
 ORDER BY num_employees DESC, DNO ASC;
 
+-- Q9. Total non-NULL hours and employee count by project
+SELECT
+    PNO,
+    SUM(HOURS) AS total_hours,
+    COUNT(DISTINCT ESSN) AS num_employees
+FROM WORKS_ON
+WHERE HOURS IS NOT NULL
+GROUP BY PNO
+ORDER BY total_hours DESC, PNO ASC;
+
