@@ -130,6 +130,52 @@ FOREIGN KEY (MGRSSN)
 REFERENCES EMPLOYEE(SSN);
 
 
+USE Company;
+
+
+SELECT DISTINCT ESSN AS essn
+FROM WORKS_ON
+WHERE HOURS > 10
+ORDER BY essn ASC;
+
+
+SELECT
+    COUNT(*) AS total_employees,
+    SUM(SALARY) AS total_salary,
+    ROUND(AVG(SALARY), 2) AS avg_salary,
+    MAX(SALARY) AS highest_salary,
+    MIN(SALARY) AS lowest_salary
+FROM EMPLOYEE
+WHERE DNO = 5;
+
+
+SELECT
+    DNO,
+    COUNT(*) AS num_employees,
+    ROUND(AVG(SALARY), 2) AS avg_salary
+FROM EMPLOYEE
+GROUP BY DNO
+ORDER BY num_employees DESC, DNO ASC;
+
+
+SELECT
+    PNO,
+    SUM(HOURS) AS total_hours,
+    COUNT(DISTINCT ESSN) AS num_employees
+FROM WORKS_ON
+WHERE HOURS IS NOT NULL
+GROUP BY PNO
+ORDER BY total_hours DESC, PNO ASC;
+
+
+SELECT
+    SUPERSSN,
+    COUNT(*) AS num_employees,
+    COUNT(DISTINCT DNO) AS distinct_depts
+FROM EMPLOYEE
+WHERE SUPERSSN IS NOT NULL
+GROUP BY SUPERSSN
+ORDER BY num_employees DESC, SUPERSSN ASC;
 
 
 

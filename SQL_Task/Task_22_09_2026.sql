@@ -424,16 +424,16 @@ ORDER BY
     Course_Name ASC;
 
 
--- Assessment 5: University database
+
 USE university;
 
--- Q1. Departments with at least one student over 50 total credits
+
 SELECT DISTINCT dept_name
 FROM student
 WHERE tot_cred > 50
 ORDER BY dept_name ASC;
 
--- Q2. Instructor salary statistics for Comp. Sci. and Physics
+
 SELECT
     COUNT(*) AS total_instructors,
     ROUND(AVG(salary), 2) AS avg_salary,
@@ -442,7 +442,7 @@ SELECT
 FROM instructor
 WHERE dept_name IN ('Comp. Sci.', 'Physics');
 
--- Q3. Course count and total credits for each department represented in course
+
 SELECT
     dept_name,
     COUNT(*) AS num_courses,
@@ -451,7 +451,7 @@ FROM course
 GROUP BY dept_name
 ORDER BY total_credits DESC, dept_name ASC;
 
--- Q4. Student enrollment by course in Fall 2025
+
 SELECT
     course_id,
     COUNT(DISTINCT ID) AS enrolled_students
@@ -461,7 +461,7 @@ WHERE semester = 'Fall'
 GROUP BY course_id
 ORDER BY enrolled_students DESC, course_id ASC;
 
--- Q5. Sections and distinct Computer Science courses taught by instructor
+
 SELECT
     ID,
     COUNT(*) AS sections_taught,
@@ -471,50 +471,3 @@ WHERE course_id LIKE 'CS-%'
 GROUP BY ID
 ORDER BY sections_taught DESC, ID ASC;
 
--- Assessment 5: Company database
-USE Company;
-
--- Q6. Employees with more than 10 hours on at least one project
-SELECT DISTINCT ESSN AS essn
-FROM WORKS_ON
-WHERE HOURS > 10
-ORDER BY essn ASC;
-
--- Q7. Salary statistics for employees in department 5
-SELECT
-    COUNT(*) AS total_employees,
-    SUM(SALARY) AS total_salary,
-    ROUND(AVG(SALARY), 2) AS avg_salary,
-    MAX(SALARY) AS highest_salary,
-    MIN(SALARY) AS lowest_salary
-FROM EMPLOYEE
-WHERE DNO = 5;
-
--- Q8. Employee count and average salary by department
-SELECT
-    DNO,
-    COUNT(*) AS num_employees,
-    ROUND(AVG(SALARY), 2) AS avg_salary
-FROM EMPLOYEE
-GROUP BY DNO
-ORDER BY num_employees DESC, DNO ASC;
-
--- Q9. Total non-NULL hours and employee count by project
-SELECT
-    PNO,
-    SUM(HOURS) AS total_hours,
-    COUNT(DISTINCT ESSN) AS num_employees
-FROM WORKS_ON
-WHERE HOURS IS NOT NULL
-GROUP BY PNO
-ORDER BY total_hours DESC, PNO ASC;
-
--- Q10. Employee count and distinct departments by supervisor
-SELECT
-    SUPERSSN,
-    COUNT(*) AS num_employees,
-    COUNT(DISTINCT DNO) AS distinct_depts
-FROM EMPLOYEE
-WHERE SUPERSSN IS NOT NULL
-GROUP BY SUPERSSN
-ORDER BY num_employees DESC, SUPERSSN ASC;
