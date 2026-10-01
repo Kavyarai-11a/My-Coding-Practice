@@ -451,3 +451,26 @@ FROM course
 GROUP BY dept_name
 ORDER BY total_credits DESC, dept_name ASC;
 
+-- Q4. Student enrollment by course in Fall 2025
+SELECT
+    course_id,
+    COUNT(DISTINCT ID) AS enrolled_students
+FROM takes
+WHERE semester = 'Fall'
+  AND year = 2025
+GROUP BY course_id
+ORDER BY enrolled_students DESC, course_id ASC;
+
+-- Q5. Sections and distinct Computer Science courses taught by instructor
+SELECT
+    ID,
+    COUNT(*) AS sections_taught,
+    COUNT(DISTINCT course_id) AS distinct_courses
+FROM teaches
+WHERE course_id LIKE 'CS-%'
+GROUP BY ID
+ORDER BY sections_taught DESC, ID ASC;
+
+-- Assessment 5: Company database
+USE Company;
+
