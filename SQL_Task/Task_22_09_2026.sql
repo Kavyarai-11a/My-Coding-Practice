@@ -509,3 +509,12 @@ WHERE HOURS IS NOT NULL
 GROUP BY PNO
 ORDER BY total_hours DESC, PNO ASC;
 
+-- Q10. Employee count and distinct departments by supervisor
+SELECT
+    SUPERSSN,
+    COUNT(*) AS num_employees,
+    COUNT(DISTINCT DNO) AS distinct_depts
+FROM EMPLOYEE
+WHERE SUPERSSN IS NOT NULL
+GROUP BY SUPERSSN
+ORDER BY num_employees DESC, SUPERSSN ASC;
