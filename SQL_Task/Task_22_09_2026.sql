@@ -474,3 +474,9 @@ ORDER BY sections_taught DESC, ID ASC;
 -- Assessment 5: Company database
 USE Company;
 
+-- Q6. Employees with more than 10 hours on at least one project
+SELECT DISTINCT ESSN AS essn
+FROM WORKS_ON
+WHERE HOURS > 10
+ORDER BY essn ASC;
+
