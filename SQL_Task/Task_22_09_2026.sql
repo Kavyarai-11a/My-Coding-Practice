@@ -442,3 +442,12 @@ SELECT
 FROM instructor
 WHERE dept_name IN ('Comp. Sci.', 'Physics');
 
+-- Q3. Course count and total credits for each department represented in course
+SELECT
+    dept_name,
+    COUNT(*) AS num_courses,
+    SUM(credits) AS total_credits
+FROM course
+GROUP BY dept_name
+ORDER BY total_credits DESC, dept_name ASC;
+
