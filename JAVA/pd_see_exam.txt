@@ -1,0 +1,34 @@
+Create a program that behave like a smal CPU scheduler
+
+The rule used to decide the order is called a CPU scheduling algorithm.
+
+Some algorithums
+FCFS → first process to arrive goes first
+SJF → shortest job goes first
+Priority → highest-priority process goes first
+Round Robin → each process gets a small time turn
+
+Our program won't just tell the examiner:
+"FCFS completed."
+It will calculate how efficiently each algorithm performed.
+
+We mainly calculate:
+Waiting Time
+
+How long a process had to wait before getting CPU time.
+Turnaround Time
+
+How long it took from the process's arrival until it completely finished.
+
+The formulas are:
+Turnaround Time
+TAT = Completion Time − Arrival Time
+
+Waiting Time
+WT = Turnaround Time − Burst Time
+
+Commands
+python -m http.server 8000
+http://localhost:8000
+
+start index.html
