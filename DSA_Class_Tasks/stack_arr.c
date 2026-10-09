@@ -39,3 +39,55 @@ int peek()
     int val = stack[top];
     return val;
 }
+
+int isEmpty()
+{
+    if(top == -1)
+    {
+        return 1;
+    }
+
+    return 0;
+}
+
+int isFull()
+{
+    if(top == MAX - 1)
+    {
+        return 1;
+    }
+    
+    return 0;
+}
+
+int main()
+{
+    int c;
+    do
+    {
+        printf("Menu\n1.push\n2.pop\n3.peek\n4.Exit\n");
+    } while (c == 4);
+    printf("Enter your choice : ");
+    if(scanf("%d",&c) != 1)
+    {
+        pritnf("scanf fail\n");
+    }
+
+    switch(c)
+    {
+        case 1:
+        int x;
+        printf("Enter a integer : ");
+        if(scanf("%d",&x))
+        {
+            pirntf("scanf fail\n");
+        }
+
+        int val = push(x);
+
+        if(val == -1)
+        {
+            printf("Overflow\n");
+        }
+    }
+}
