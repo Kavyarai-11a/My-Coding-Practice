@@ -29,25 +29,26 @@ int pop()
     return value;
 }
 
-int peek()
-{
-    if(top == -1)
-    {
-        return -2;
-    }
-
-    int val = stack[top];
-    return val;
-}
-
 int isEmpty()
 {
     if(top == -1)
     {
-        return 1;
+        return -3;
     }
 
     return 0;
+}
+
+int peek()
+{
+    if(top == -1)
+    {
+       int a = isEmpty();
+       return a;
+    }
+
+    int val = stack[top];
+    return val;
 }
 
 int isFull()
@@ -66,36 +67,72 @@ int main()
     do
     {
         printf("Menu\n1.push\n2.pop\n3.peek\n4.Exit\n");
-    } while (c == 4);
+    
     printf("Enter your choice : ");
     if(scanf("%d",&c) != 1)
     {
-        pritnf("scanf fail\n");
+        printf("scanf fail\n");
+        return 0;
+    }
+
+    int x;
+    int val;
+    if(c == 1)
+    {
+        printf("Enter a integer : ");
+        if(scanf("%d",&x) != 1)
+        {
+            printf("scanf fail\n");
+            return 0;
+        }
+
     }
 
     switch(c)
     {
         case 1:
-        int x;
-        printf("Enter a integer : ");
-        if(scanf("%d",&x))
-        {
-            pirntf("scanf fail\n");
-        }
-
-        int val = push(x);
+        val = push(x);
 
         if(val == -1)
         {
             printf("Overflow\n");
         }
 
+        else
+        printf("Succesfully pushed\n");
+        break;
+
         case 2:
-        int val = pop();
+        val = pop();
 
         if(val == -2)
         {
             printf("Underflow\n");
         }
+
+        else
+        printf("%d  is removed\n",val);
+        break;
+
+        case 3:
+        val = peek();
+
+        if(val == -3)
+        {
+            printf("Stack is empty\n");
+        }
+
+        else
+        printf("%d is on top\n",val);
+        break;
+
+        case 4:
+        printf("Exit\n");
+        return 0;
+        break;
+
+        default:
+        printf("Ivalid input fill ur choice again\n");
     }
+    } while (c != 4);
 }
