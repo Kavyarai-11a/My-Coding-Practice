@@ -28,3 +28,14 @@ int pop()
     top--;
     return value;
 }
+
+int peek()
+{
+    if(top == -1)
+    {
+        return -2;
+    }
+
+    int val = stack[top];
+    return val;
+}
