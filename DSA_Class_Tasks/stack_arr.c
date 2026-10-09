@@ -89,5 +89,13 @@ int main()
         {
             printf("Overflow\n");
         }
+
+        case 2:
+        int val = pop();
+
+        if(val == -2)
+        {
+            printf("Underflow\n");
+        }
     }
 }
