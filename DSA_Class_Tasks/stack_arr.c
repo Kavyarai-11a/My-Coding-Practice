@@ -17,3 +17,14 @@ int push(int x)
     
 }
 
+int pop()
+{
+    if(top == -1)
+    {
+        return -2;
+    }
+
+    stack[top] = 0;
+    top--;
+    return 0;
+}
