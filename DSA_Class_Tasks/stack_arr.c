@@ -24,7 +24,7 @@ int pop()
         return -2;
     }
 
-    stack[top] = 0;
+    int value = stack[top];
     top--;
-    return 0;
+    return value;
 }
