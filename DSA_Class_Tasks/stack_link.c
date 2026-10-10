@@ -9,11 +9,6 @@ typedef struct node
 
 Node *createNode(int data)
 {
-    if(head == NULL)
-    {
-        return NULL;
-    }
-
     Node *newNode = malloc(sizeof(Node));
     if(newNode == NULL)
     {
