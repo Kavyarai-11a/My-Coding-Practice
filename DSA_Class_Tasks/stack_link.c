@@ -36,7 +36,7 @@ int push(Node **head,int data)
 
     if(*head == NULL)
     {
-        *head = newNode->link;
+        *head = newNode;
     }
 
     else
@@ -64,6 +64,7 @@ int pop(Node **head)
     if((*head)->link == NULL)
     {
         free(*head);
+        *head = NULL;
     }
 
     else{
@@ -78,7 +79,7 @@ int pop(Node **head)
 int isEmpty(Node *head){
     if(head == NULL)
     {
-        return -2;
+        return -3;
     }
 
     return 0;
@@ -97,7 +98,7 @@ Node * peek(Node *head)
 int main()
 {
     int c;
-    Node *head;
+    Node *head = NULL;
 
     do
     {
@@ -141,7 +142,7 @@ int main()
             case 2:
                 val = pop(&head);
 
-                if (val == -1 && isEmpty(head))
+                if (isEmpty(head))
                 {
                     printf("Enable to pop\n");
                 }
