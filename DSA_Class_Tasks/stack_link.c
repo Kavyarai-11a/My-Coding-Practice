@@ -160,6 +160,13 @@ int main()
                     printf("%d is on top\n", a->data);
                 }
                 break;
+            case 4:
+                printf("Exit\n");
+                break;
+
+            default:
+                printf("Invalid choice. Try again.\n");
         }
-    }while(c != 4)
+    }while(c != 4);
+    return 0;
 }
