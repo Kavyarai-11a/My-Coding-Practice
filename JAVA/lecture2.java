@@ -32,9 +32,9 @@ public class lecture2 {
         // else
         //     System.out.println(a + " and " + b + " both are equal");
 
-        int c = sc.nextLine();
+        int c = sc.nextInt();
 
-        Switch(c)
+        switch(c)
         {
             case 1:
                 System.out.println("Hello");
@@ -48,7 +48,7 @@ public class lecture2 {
                 System.out.println("Bonjunga");
                 break;
 
-            default:
+            default: 
                 System.out.println("Invalid Input");
         }
         sc.close();
