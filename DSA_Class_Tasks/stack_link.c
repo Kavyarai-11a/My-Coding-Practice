@@ -26,3 +26,29 @@ Node *createNode(int data)
     return newNode;
 }
 
+int push(Node **head,int data)
+{
+    if(head == NULL)
+    {
+        return -1;
+    }
+
+    Node *newNode = createNode(data);
+    if(newNode == NULL)
+    {
+        return -2;
+    }
+
+    if(*head == NULL)
+    {
+        *head = newNode->link;
+    }
+
+    else
+    {
+        newNode->link = *head;
+        *head = newNode;
+    }
+
+    return 0;
+}
