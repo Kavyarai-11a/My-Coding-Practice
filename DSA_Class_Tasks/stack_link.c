@@ -154,7 +154,7 @@ int main()
                 }
 
                 else{
-                    printf("Enable to pop\n")
+                    printf("Enable to pop\n");
                 }
                 break;
             
