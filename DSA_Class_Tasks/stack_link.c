@@ -135,7 +135,7 @@ int main()
 
                 else
                 {
-                    pirntf("Enable to push\n");
+                    printf("Enable to push\n");
                 }
                 break;
             case 2:
@@ -150,7 +150,9 @@ int main()
                     printf("pop successfully\n");
                 }
                 break;
-            if (isEmpty(head))
+            
+            case 3:
+                if (isEmpty(head))
                 {
                     printf("Stack is empty\n");
                 }
