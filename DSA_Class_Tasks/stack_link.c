@@ -74,3 +74,92 @@ int pop(Node **head)
 
     return 0;
 }
+
+int isEmpty(Node *head){
+    if(head == NULL)
+    {
+        return -2;
+    }
+
+    return 0;
+}
+
+Node * peek(Node *head)
+{
+    if(isEmpty(head))
+    {
+        return NULL;
+    }
+
+    return head;
+}
+
+int main()
+{
+    int c;
+    Node *head;
+
+    do
+    {
+        printf("\nMenu\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Peek\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+
+        if (scanf("%d", &c) != 1)
+        {
+            printf("Invalid input\n");
+            return 1;
+        }
+
+        int x, val;
+        Node *a;
+        switch(c)
+        {
+            case 1:
+                printf("Enter an integer: ");
+
+                if (scanf("%d", &x) != 1)
+                {
+                    printf("Invalid input\n");
+                    return 1;
+                }
+
+                val = push(&head,x);
+                if (val == 0)
+                {
+                    printf("Successfully pushed\n");
+                }
+
+                else
+                {
+                    pirntf("Enable to push\n");
+                }
+                break;
+            case 2:
+                val = pop(&head);
+
+                if (val == -1 && isEmpty(head))
+                {
+                    printf("Enable to pop\n");
+                }
+                else
+                {
+                    printf("pop successfully\n");
+                }
+                break;
+            if (isEmpty(head))
+                {
+                    printf("Stack is empty\n");
+                }
+                else
+                {
+                    a = peek(head);
+                    printf("%d is on top\n", a->data);
+                }
+                break;
+        }
+    }while(c != 4)
+}
