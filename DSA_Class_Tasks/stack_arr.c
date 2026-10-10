@@ -33,7 +33,7 @@ int isEmpty()
 {
     if(top == -1)
     {
-        return -3;
+        return 1;
     }
 
     return 0;
@@ -43,8 +43,7 @@ int peek()
 {
     if(top == -1)
     {
-       int a = isEmpty();
-       return a;
+       return -2;
     }
 
     int val = stack[top];
@@ -117,7 +116,7 @@ int main()
         case 3:
         val = peek();
 
-        if(val == -3)
+        if(isEmpty() == 1)
         {
             printf("Stack is empty\n");
         }
