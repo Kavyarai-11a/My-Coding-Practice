@@ -140,15 +140,21 @@ int main()
                 }
                 break;
             case 2:
-                val = pop(&head);
 
                 if (isEmpty(head))
                 {
-                    printf("Enable to pop\n");
+                    printf("Stack is empty\n");
                 }
-                else
+
+                val = pop(&head);
+
+                if(val == 0)
                 {
                     printf("pop successfully\n");
+                }
+
+                else{
+                    printf("Enable to pop\n")
                 }
                 break;
             
