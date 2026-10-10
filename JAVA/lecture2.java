@@ -31,6 +31,26 @@ public class lecture2 {
         //     System.out.println(b + " is greater than " + a);
         // else
         //     System.out.println(a + " and " + b + " both are equal");
+
+        int c = sc.nextLine();
+
+        Switch(c)
+        {
+            case 1:
+                System.out.println("Hello");
+                break;
+
+            case 2:
+                System.out.println("Namaste");
+                break;
+
+            case 3:
+                System.out.println("Bonjunga");
+                break;
+
+            default:
+                System.out.println("Invalid Input");
+        }
         sc.close();
 
     }
