@@ -47,3 +47,30 @@ int push(Node **head,int data)
 
     return 0;
 }
+
+int pop(Node **head)
+{
+    if(head == NULL)
+    {
+        return -1;
+    }
+
+    if(*head == NULL)
+    {
+        return -3;
+    }
+    
+    Node *temp;
+    if((*head)->link == NULL)
+    {
+        free(*head);
+    }
+
+    else{
+        temp = *head;
+        *head = temp->link;
+        free(temp);
+    }
+
+    return 0;
+}
