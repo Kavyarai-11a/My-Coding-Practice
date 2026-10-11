@@ -151,6 +151,23 @@ public class lecture4 {
             {
                 System.out.print("*");
             }
+            System.out.println();
+        }
+        for(int i=4;i>0;i--)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+            for(int k=1;k<=8-2i;k++)
+            {
+                System.out.print(" ")
+            }
+            for(int l=1;l<=i;l++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 
