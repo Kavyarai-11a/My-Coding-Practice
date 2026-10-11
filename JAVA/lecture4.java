@@ -170,18 +170,51 @@ public class lecture4 {
         //     System.out.println();
         // }
 
+        // for(int i=1;i<=5;i++)
+        // {
+        //     for(int k=1;k<=5-i;k++)
+        //     {
+        //         System.out.print(" ");
+        //     }
+        //     for(int j=1;j<=5;j++)
+        //     {
+        //         System.out.print("*");
+        //     }
+        //     System.out.println();
+        // }
+
+        // for(int i=1;i<=5;i++)
+        // {
+        //     for(int j=1;j<=5-i;j++)
+        //     {
+        //         System.out.print(" ");
+        //     }
+        //     for(int k=1;k<=i;k++)
+        //     {
+        //         System.out.print(i + " ");
+        //     }
+        //     System.out.println();
+        // }
+
+
         for(int i=1;i<=5;i++)
         {
-            for(int k=1;k<=5-i;k++)
+            for(int j=1;j<=5-i;j++)
             {
-                System.out.print(" ");
+                System.out.print("  ");
             }
-            for(int j=1;j<=5;j++)
+
+            for(int k=i;k>0;k--)
             {
-                System.out.print("*");
+                System.out.print(k + " ");
             }
-            System.out.println();
+
+            for(int l=2;l<=i;l++)
+            {
+                System.out.print(l + " ");
+            }
+
+            System.out.print("\n");
         }
     }
-
 }
