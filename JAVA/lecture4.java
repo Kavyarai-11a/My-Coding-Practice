@@ -94,7 +94,7 @@ public class lecture4 {
             {
                 System.out.print(j);
             }
-            System.out.print();
+            System.out.println();
         }
     }
 }
