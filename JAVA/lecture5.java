@@ -58,15 +58,29 @@ public class lecture5 {
     //     System.out.println("Total zeros : "+zero);
     //     return;
 
-    public static void powerNum(int x,int n)
+    // public static void powerNum(int x,int n)
+    // {
+    //     int pow = 1;
+    //     for(int i=0;i<n;i++)
+    //     {
+    //         pow *= x;
+    //     }
+
+    //     System.out.println(pow);
+    // }
+
+    public static void commonFact(int a,int b)
     {
-        int pow = 1;
-        for(int i=0;i<n;i++)
+        int factor = 0;
+        for(int i=2;i<=a&&i<=b;i++)
         {
-            pow *= x;
+            if(a%i == 0 && b%i == 0)
+            {
+                factor = i;
+            }
         }
 
-        System.out.println(pow);
+        System.out.println("Greatest Common Factor : " + factor);
     }
     
     public static void main(String[] args)
@@ -78,9 +92,10 @@ public class lecture5 {
 
         // double r = sc.nextDouble();
         // System.out.print("Enter size of array : ");
-        int n = sc.nextInt();
-        int x = sc.nextInt();
-        powerNum(x,n);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        commonFact(a,b);
+        // powerNum(x,n);
         // int[] arr = new int[n];
         //System.out.println(sum(a,b));
         // System.out.println(mul(a,b));
