@@ -143,9 +143,9 @@ public class lecture4 {
             {
                 System.out.print("*");
             }
-            for(int k=1;k<=8-2i;k++)
+            for(int k=1;k<=(8-2*i);k++)
             {
-                System.out.print(" ")
+                System.out.print(" ");
             }
             for(int l=1;l<=i;l++)
             {
@@ -159,9 +159,9 @@ public class lecture4 {
             {
                 System.out.print("*");
             }
-            for(int k=1;k<=8-2i;k++)
+            for(int k=1;k<=(8-2*i);k++)
             {
-                System.out.print(" ")
+                System.out.print(" ");
             }
             for(int l=1;l<=i;l++)
             {
