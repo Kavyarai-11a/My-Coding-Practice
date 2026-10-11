@@ -97,15 +97,33 @@ public class lecture4 {
         //     System.out.println();
         // }
 
+        // int val = 1;
+        // for(int i=1;i<=5;i++)
+        // {
+        //     for(int j=1;j<=i;j++)
+        //     {
+        //         System.out.print(val + " ");
+        //         val++;
+        //     }
+        //     System.out.println();
+        // }
+
         int val = 1;
         for(int i=1;i<=5;i++)
         {
-            for(int j=1;j<=i;j++)
+            for(int j=1,j<=1;j++)
             {
-                System.out.print(val + " ");
-                val++;
+                System.out.print(val)
+                if(val == 1)
+                {
+                    val = 0;
+                }
+
+                else if(val == 0)
+                {
+                    val = 1;
+                }
             }
-            System.out.println();
         }
     }
 
