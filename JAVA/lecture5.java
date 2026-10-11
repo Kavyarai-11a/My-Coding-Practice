@@ -31,6 +31,32 @@ public class lecture5 {
     // {
     //     return 2*3.14*r;
     // }
+
+    public static void checkNum(int arr,int n)
+    {
+        Scanner sc = new Scanner(System.in);
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = sc.nextInt();
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            int pos,neg,zero;
+            if(arr[i] > 0){
+                pos++;
+            } else if(arr[i] < 0){
+                neg++;
+            } else{
+                zero++;
+            }
+        }
+        
+        System.out.println("Total positive num : "+pos);
+        System.out.println("Total negative num : "+neg);
+        System.out.println("Total zeros : "+zero);
+
+    }
     
     public static void main(String[] args)
     {
@@ -40,8 +66,9 @@ public class lecture5 {
         // myName(name);
 
         // double r = sc.nextDouble();
-        // int b = sc.nextInt();
-
+        System.out.print("Enter size of array : ");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
         //System.out.println(sum(a,b));
         // System.out.println(mul(a,b));
 
@@ -49,12 +76,14 @@ public class lecture5 {
 
         // System.out.println(cirOfCircle(r));
 
-        int i=1;
-        do
-        {
-            System.out.println("Infinite Loop");
-        }
-        while(i<=2);
+        // int i=1;
+        // do
+        // {
+        //     System.out.println("Infinite Loop");
+        // }
+        // while(i<=2);
+
+        System.out.println(checkNum(arr,n));
         sc.close();
     }
 }
