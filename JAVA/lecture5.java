@@ -32,30 +32,41 @@ public class lecture5 {
     //     return 2*3.14*r;
     // }
 
-    public static void checkNum(int arr,int n)
-    {
-        Scanner sc = new Scanner(System.in);
-        for(int i=0;i<n;i++)
-        {
-            arr[i] = sc.nextInt();
-        }
+    // public static void checkNum(int[] arr,int n)
+    // {
+    //     Scanner sc = new Scanner(System.in);
+    //     int pos = 0,neg = 0,zero = 0;
+    //     for(int i=0;i<n;i++)
+    //     {
+    //         arr[i] = sc.nextInt();
+    //     }
 
-        for(int i=0;i<n;i++)
-        {
-            int pos,neg,zero;
-            if(arr[i] > 0){
-                pos++;
-            } else if(arr[i] < 0){
-                neg++;
-            } else{
-                zero++;
-            }
-        }
+    //     for(int i=0;i<n;i++)
+    //     {
+            
+    //         if(arr[i] > 0){
+    //             pos++;
+    //         } else if(arr[i] < 0){
+    //             neg++;
+    //         } else{
+    //             zero++;
+    //         }
+    //     }
         
-        System.out.println("Total positive num : "+pos);
-        System.out.println("Total negative num : "+neg);
-        System.out.println("Total zeros : "+zero);
+    //     System.out.println("Total positive num : "+pos);
+    //     System.out.println("Total negative num : "+neg);
+    //     System.out.println("Total zeros : "+zero);
+    //     return;
 
+    public static void powerNum(int x,int n)
+    {
+        int pow = 1;
+        for(int i=0;i<n;i++)
+        {
+            pow *= x;
+        }
+
+        System.out.println(pow);
     }
     
     public static void main(String[] args)
@@ -66,9 +77,11 @@ public class lecture5 {
         // myName(name);
 
         // double r = sc.nextDouble();
-        System.out.print("Enter size of array : ");
+        // System.out.print("Enter size of array : ");
         int n = sc.nextInt();
-        int[] arr = new int[n];
+        int x = sc.nextInt();
+        powerNum(x,n);
+        // int[] arr = new int[n];
         //System.out.println(sum(a,b));
         // System.out.println(mul(a,b));
 
@@ -83,7 +96,7 @@ public class lecture5 {
         // }
         // while(i<=2);
 
-        System.out.println(checkNum(arr,n));
+        // checkNum(arr,n);
         sc.close();
     }
 }
