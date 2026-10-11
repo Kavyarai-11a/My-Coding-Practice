@@ -69,18 +69,33 @@ public class lecture5 {
     //     System.out.println(pow);
     // }
 
-    public static void commonFact(int a,int b)
-    {
-        int factor = 0;
-        for(int i=2;i<=a&&i<=b;i++)
-        {
-            if(a%i == 0 && b%i == 0)
-            {
-                factor = i;
-            }
-        }
+    // public static void commonFact(int a,int b)
+    // {
+    //     int factor = 0;
+    //     for(int i=2;i<=a&&i<=b;i++)
+    //     {
+    //         if(a%i == 0 && b%i == 0)
+    //         {
+    //             factor = i;
+    //         }
+    //     }
 
-        System.out.println("Greatest Common Factor : " + factor);
+    //     System.out.println("Greatest Common Factor : " + factor);
+    // }
+
+    public static void fabonacciSeries(int n)
+    {
+        int a=0,b=1,sum=0;
+        System.out.print(a + " ");
+        System.out.print(b + " ");
+        for(int i=0;i<n-2;i++)
+        {
+            sum = a+b;
+            System.out.print(sum + " ");
+            a = b;
+            b = sum;
+            sum = 0;
+        }
     }
     
     public static void main(String[] args)
@@ -92,9 +107,10 @@ public class lecture5 {
 
         // double r = sc.nextDouble();
         // System.out.print("Enter size of array : ");
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        commonFact(a,b);
+        int n = sc.nextInt();
+        fabonacciSeries(n);
+        // int b = sc.nextInt();
+        // commonFact(a,b);
         // powerNum(x,n);
         // int[] arr = new int[n];
         //System.out.println(sum(a,b));
