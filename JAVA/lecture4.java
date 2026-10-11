@@ -111,9 +111,9 @@ public class lecture4 {
         int val = 1;
         for(int i=1;i<=5;i++)
         {
-            for(int j=1,j<=1;j++)
+            for(int j=1;j<=i;j++)
             {
-                System.out.print(val)
+                System.out.print(val + " ");
                 if(val == 1)
                 {
                     val = 0;
@@ -123,7 +123,9 @@ public class lecture4 {
                 {
                     val = 1;
                 }
+                
             }
+            System.out.println();
         }
     }
 
