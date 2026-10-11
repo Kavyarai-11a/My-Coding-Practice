@@ -69,7 +69,7 @@ public class lecture4 {
         {
             for(int j=1;j<i;j++)
             {
-                System.out.print();
+                System.out.print(" ");
             }
             for(int k=0;k<4;k++)
             {
