@@ -10,10 +10,27 @@ public class lecture5 {
     // {
     //     return a+b;
     // }
-    public static int mul(int a,int b)
-    {
-        return a*b;
-    }
+
+    // public static int mul(int a,int b)
+    // {
+    //     return a*b;
+    // }
+
+    // public static int factorialOfNum(int n)
+    // {
+    //     int fac = 1;
+    //     for(int i=1;i<=n;i++)
+    //     {
+    //         fac *= i;
+    //     }
+
+    //     return fac;
+    // }
+
+    // public static double cirOfCircle(double r)
+    // {
+    //     return 2*3.14*r;
+    // }
     
     public static void main(String[] args)
     {
@@ -22,11 +39,22 @@ public class lecture5 {
 
         // myName(name);
 
-        int a = sc.nextInt();
-        int b = sc.nextInt();
+        // double r = sc.nextDouble();
+        // int b = sc.nextInt();
 
         //System.out.println(sum(a,b));
-        System.out.println(mul(a,b));
+        // System.out.println(mul(a,b));
+
+        // System.out.println(factorialOfNum(n));
+
+        // System.out.println(cirOfCircle(r));
+
+        int i=1;
+        do
+        {
+            System.out.println("Infinite Loop");
+        }
+        while(i<=2);
         sc.close();
     }
 }
