@@ -76,5 +76,19 @@ class Result extends Marks implements Evaluation{
     }
 }
 
-public class main
+public class week5_4 {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int id = sc.nextInt();
+        sc.nextLine();
+        String name = sc.nextLine();
+        int m1 = sc.nextInt();
+        int m2 = sc.nextInt();
+        int m3 = sc.nextInt();
+
+        Result r = new Result(id,name,m1,m2,m3);
+        r.display();
+        sc.close();
+    }
+}
 
