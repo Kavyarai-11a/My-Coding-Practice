@@ -20,5 +20,16 @@ class Student{
     }
 }
 
+class Marks extends Student{
+    int m1;
+    int m2;
+    int m3;
 
+    Marks(int id,String name,int m1,int m2,int m3){
+        super(id,name);
+        this.m1 = m1;
+        this.m2 = m2;
+        this.m3 = m3;
+    }
+}
 
