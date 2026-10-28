@@ -33,3 +33,11 @@ class Marks extends Student{
     }
 }
 
+class Result extends Marks implements Evaluation{
+
+    Result(int id,String name,int m1,int m2,int m3){
+        super(id,name,m1,m2,m3);
+    }
+    
+}
+
