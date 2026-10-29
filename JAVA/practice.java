@@ -1,54 +1,94 @@
 import java.util.Scanner;
 
-class Employee {
+enum Grade {
+    O,A_PLUS,A,B_PLUS,B,F
+}
+
+interface Ealuation {
+    int calTotal();
+    double calPer();
+    Grade calgrade();
+}
+
+class Student {
     int id;
     String name;
 
-    Employee(int id,String name){
+    Student(int id,String name){
         this.id = id;
         this.name = name;
     }
+
 }
 
-class Salary extends Employee{
-    double basic;
+class Marks extends Student {
 
-    Salary(int id,String name,double basic){
+    int m1;
+    int m2;
+    int m3;
+
+    Marks(int id,String name,int m1,int m2,int m3){
         super(id,name);
-        this.basic = basic;
+        this.m1 = m1;
+        this.m2 = m2;
+        this.m3 = m3;
     }
+
 }
 
-class PayRoll extends Salary {
+class Result extends Marks implements Evaluation{
 
-    PayRoll(int id,String name,double basic){
-        super(id,name,basic);
+    Result(int id,String name,int m1,int m2,int m3){
+        super(id,name,m1,m2,m3);
     }
 
-    double CalGrossSalary(){
-        return basic + (0.2 * basic) + (0.1 * basic);
+    @Override 
+    public int calTotal(){
+        return m1+m2+m3;
+    }
+
+    @Override 
+    public double calPer(){
+        return calTotal()/3.0;
+    }
+
+    @Override 
+    public Grade calgrade(){
+        if(m1<35 || m2<35 || m3<35) return Grade.F;
+
+        double p = calPer();
+        if(p >= 90) return Grade.O;
+        else if(p >= 80) return Grade.A_PLUS;
+        else if(p >= 70) return Grade.A;
+        else if(p >= 60) return Grade.B_PLUS;
+        else return Grade.B;
     }
 
     void display(){
+
+        Grade grade = calgrade();
+        
         System.out.println(id);
         System.out.println(name);
-        System.out.printf("%.2f%n",basic);
-        System.out.printf("%.2f%n",CalGrossSalary());
+        System.out.println(calTotal());
+        System.out.printf("%.2f%n",calPer());
+        System.out.println(grade);
+        System.out.println(grade == Grade.F ? "FAIL" : "PASS");
     }
 }
 
 public class practice {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-
-        int id = sc.nextInt().trim();
-        //sc.nextLine();
+        int id = sc.nextInt();
+        sc.nextLine();
         String name = sc.nextLine();
-        double basic = sc.nextDouble();
+        int m1 = sc.nextInt();
+        int m2 = sc.nextInt();
+        int m3 = sc.nextInt();
 
-        PayRoll p = new PayRoll(id,name,basic);
-
-        p.display();
+        Result r = new Result(id,name,m1,m2,m3);
+        r.display();
         sc.close();
     }
 }

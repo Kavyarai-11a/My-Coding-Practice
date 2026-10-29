@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-enum Evaluation{
+enum Grade{
     O,A_PLUS,A,B_PLUS,B,F
 }
 
@@ -39,23 +39,23 @@ class Result extends Marks implements Evaluation{
         super(id,name,m1,m2,m3);
     }
 
-    @Override;
+    @Override
     public int calTotal(){
-        return m1,m2,m3;
+        return m1+m2+m3;
     }
 
-    @Override;
+    @Override
     public double calPer(){
         return calTotal()/3.0;
     }
 
-    @Override;
+    @Override
     public Grade calgrade(){
         if(m1 < 35 || m2 < 35 || m3 < 35){
-            return Grade.F
+            return Grade.F;
         }
 
-        p = calPer();
+        double p = calPer();
         if(p >= 90) return Grade.O;
         else if(p >= 80) return Grade.A_PLUS;
         else if(p >= 70) return Grade.A;
@@ -72,7 +72,7 @@ class Result extends Marks implements Evaluation{
         System.out.println(calTotal());
         System.out.printf("%.2f%n",calPer());
         System.out.println(grade);
-        System.out.println(grade == Grade.F ? FAIL : PASS);
+        System.out.println(grade == Grade.F ? "FAIL" : "PASS");
     }
 }
 
