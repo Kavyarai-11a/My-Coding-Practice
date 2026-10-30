@@ -122,7 +122,30 @@ void insertPosition(Node *header, Node **tail, int value, int pos) {
 
 // Delete front node
 void deleteFront(Node *header, Node **tail) {
+    if(header == NULL){
+        return;
+    }
 
+    if(tail == NULL){
+        return;
+    }
+
+    if(*tail == NULL){
+        return;
+    }
+    Node *temp = header->next;
+
+    if((*tail)->next == NULL){
+        header->next == NULL;
+        *tail == NULL;
+    }
+    else{
+        header->next = temp->next;
+        temp->next->prev = header;
+    }
+    
+    free(temp);
+    return;
 }
 
 // Delete end node
