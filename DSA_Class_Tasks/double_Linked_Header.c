@@ -134,13 +134,11 @@ void deleteFront(Node *header, Node **tail) {
         return;
     }
     Node *temp = header->next;
-
-    if((*tail)->next == NULL){
-        header->next == NULL;
-        *tail == NULL;
+    header->next = temp->next;
+    if(header->next->next == NULL){
+        *tail = NULL;
     }
     else{
-        header->next = temp->next;
         temp->next->prev = header;
     }
     
