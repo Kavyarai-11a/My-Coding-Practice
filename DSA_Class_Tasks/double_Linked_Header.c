@@ -82,19 +82,41 @@ void insertPosition(Node *header, Node **tail, int value, int pos) {
     if(tail == NULL){
         return;
     }
+    if(pos == 1){
+        insertFront(header,tail,value);
+    }
+    Node *temp = header->next;
+    for(int i=1;i<pos;i++){
+        if(temp == NULL){
+            return;
+        }
+        temp = temp->next;
+    }
+    
+    if(temp == NULL){
+        return;
+    }
+
+    if(temp->next == NULL){
+        insertEnd(header,tail,value);
+    }
     Node *nN = createNode(value);
     if(nN == NULL){
         return;
     }
-    if(pos == 1){
-        return insertFront(header,*tail,value);
-    }
-    Node *temp = header->next;
     for(int i=1;i<pos;i++){
+        if(temp == NULL){
+            return;
+        }
         temp = temp->next;
     }
+    if(temp == NULL){
+        return;
+    }
     nN->next = temp->next;
+    temp->next->prev =nN;
     nN->prev = temp;
+    temp->next = nN;
 }
 
 // Delete front node
