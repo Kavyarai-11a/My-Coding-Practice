@@ -49,7 +49,7 @@ void insertFront(Node *header, Node **tail, int value) {
 }
 // Insert at end
 void insertEnd(Node *header, Node **tail, int value) {
-        if(header == NULL){
+    if(header == NULL){
         return;
     }
     if(tail == NULL){
@@ -73,7 +73,28 @@ void insertEnd(Node *header, Node **tail, int value) {
 
 // Insert at a given position
 void insertPosition(Node *header, Node **tail, int value, int pos) {
-
+    if(pos <= 0){
+        return;
+    }
+    if(header == NULL){
+        return;
+    }
+    if(tail == NULL){
+        return;
+    }
+    Node *nN = createNode(value);
+    if(nN == NULL){
+        return;
+    }
+    if(pos == 1){
+        return insertFront(header,*tail,value);
+    }
+    Node *temp = header->next;
+    for(int i=1;i<pos;i++){
+        temp = temp->next;
+    }
+    nN->next = temp->next;
+    nN->prev = temp;
 }
 
 // Delete front node
