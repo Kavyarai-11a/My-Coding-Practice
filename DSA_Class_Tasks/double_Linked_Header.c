@@ -148,7 +148,28 @@ void deleteFront(Node *header, Node **tail) {
 
 // Delete end node
 void deleteEnd(Node *header, Node **tail) {
+    if(header == NULL){
+        return;
+    }
 
+    if(tail == NULL){
+        return;
+    }
+
+    if(*tail == NULL){
+        return;
+    }
+    Node *temp = header->next;
+    header->next = temp->next;
+    if(header->next->next == NULL){
+        *tail = NULL;
+    }
+    else{
+        temp = *tail;
+        *tail = temp->prev;
+    }
+
+    free(temp);
 }
 
 // Delete node at a given position
